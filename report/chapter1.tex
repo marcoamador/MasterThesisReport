@@ -1,0 +1,83 @@
+\chapter{Introduction} \label{chap:intro}
+
+\section*{}
+
+This initial chapter aims to give a general overview about this thesis and the themes it addresses. We will start by explaining the context in which it is inserted, as well as the motivation beneath the proposal.
+
+The main objectives of this thesis work, as well as the methods that will be employed in order to achieve them, will also be described.
+
+
+
+\section{Context} \label{sec:context}
+
+In the last few years, we have seen the speed of evolution and innovation regarding technology reach levels we never thought before, and applied to several fields. One of these fields, and probably the one where we, as human beings, felt that evolution was communication. 
+Some of the big changes we perceived was for instance, the massification of the e-mail usage to communicate, the rise (and posterior fall) of instant messaging applications, the boost of the number of mobile phones and Internet connections worldwide ~\cite{kn:Int13}.
+
+Some recent studies related to the "Six Degrees of Separation theory", which defends that every person in the Earth is only separated, by way of introduction, by six steps to any other person, have shown that this value has been decreasing in the last few years. Microsoft itself performed a study with data from Messenger application, that revealed, only using that application, the mean path between Messenger users is 6.6 \cite{kn:LH07}.
+
+The advent of social networks, platforms that allow information sharing and interaction between people in several ways, had (and still has) a great contribute in approximating people and, along with the growth of Internet connections worldwide and the easiness of internet access, allows people to be constantly connected and communicating.
+
+Mobile devices, in the last few years, have evolved as well, along with technology, developing capabilities of internet access and allowing that connection and communication to be done even when people are not at home or at work.
+
+As this evolution happens, we witness as well an increasing migration from people to larger cities, promoting an increment on the worldwide population living in urban areas. Recent data on this migration show that this migration is happening in both well developed and less developed regions around the globe \cite{kn:NAT11}.
+
+This is contributing to generate chaos on our cities, making the task of reaching our destinations quickly increasingly harder (due to the increasing number of vehicles and people).
+
+Public transport, however, has a vital role on promoting urban mobility and helping us avoid those problems. Encouraging its use reduces the number of cars, thus reducing traffic levels and the likelihood of traffic jams, increasing the efficiency of transport inside the cities and the efficiency of public transport itself \cite{kn:CSV11}.
+
+As an attempt to promote public transport usage, some companies publicize their services and try to reach their costumers through social networks, particularly the most widely used, such as \emph{Facebook} or \emph{Twitter}, taking advantage of their popularity.
+
+The concept that supports this thesis is based upon this phenomenon, and tries to explore social network's abilities to act as information vehicle between people, and the willingness of people to share information in the first place. However, the kind of information we intend to see shared between people with this project is information concerning public transport, in such way that both users and operators can benefit from that information. 
+
+This concept has been proposed in the article \emph{Using social networks for exchanging valuable real time public transport information between travellers} \cite{kn:NGeCP11}, and its implementation is in course at the \emph{IBM Center for Advanced Studies} at FEUP. That implementation has been the subject of previous master thesis works from MIEIC, and resulted on a prototype for an Android mobile application \cite{kn:eSG12}. 
+
+This thesis aims to provide a redesigned and intuitive interface to the project, in order to make the new iteration a more efficient way for travellers to help each other and contribute to a better public transport service, ultimately leading to an increasing use of public transport (and possibly more efficient public transport and cities). 
+
+\section{Motivation} \label{sec:motivation}
+
+Time is the most precious resource nowadays, specially for those who live in a city. We waste some of that time on our daily travels, such as performing home-to-work course and the reverse. Often, journeys that should last 10 minuted end up lasting much more than that, due to delays, traffic jams and so on. 
+
+Those factors generate some unpredictability on public transport behaviour that, allied with the lack of information about the routes, delays and unexpected problems, frequently leads people to try to avoid them when possible, in order to keep up to their schedule \cite{kn:BC07}.
+
+Providing travellers with real-time status information about public transport is something that can lead people to use them. This way, we can help people making informed travel decisions, while possibly reducing the number of private vehicles circulating in our cities, thus reducing traffic and saving time.
+
+Social networks have been used in the recent times by some public transport companies in order to get closer to their customers and to provide them some real-time information about their services. Using social networks, those companies are establishing a two-way communication street with their customers, generating feedback that can be used to improve the quality of the offered services.
+
+However, recent studies have shown that, despite the notorious advantages that arise from this kind of approach, the information provided is not fully exploited sometimes, leading users to perceive it as useless and to underestimate it \cite{kn:NGeCP11}.
+
+The existence of a social network designed to provide structured information in real-time to the right people (people that would perceive that information as highly useful), through a mobile application, could help improving the public transport' perceived experience. Moreover, if the information shared inside this social network had origin in the users themselves, the transport operators wouldn't have charges related to the maintenance of those services, while receiving a constant source of feedback they can use to improve the quality and efficiency of their services.
+
+This social network could also contribute to other kinds of benefits (apart from the economical ones to the transport operators). For instance, it could lead to decreasing levels of stress suffered by passengers of public transport, by increasing their well-being, and also, as an ultimate consequence, to the reduction of the ecological footprint generated by the widespread use of private vehicles on home-to-work travels.
+
+However, providing structured information to the right people in real-time is not enough. Being this social network fed by information generated by and shared between its users, it must have as many users as possible, in order to generate a large volume of information, so that users can receive information useful for them.
+
+That said, the user interface (UI) of the social network, in this case, a mobile application, must be intuitive and attractive to the passengers, captivating them to use it daily and to contribute to the information flow inside the social network. 
+
+\section{Goals} \label{sec:goals}
+
+One of the most innovative aspects of the concept referred in the last section is the creation of dynamic community networks, in time and space. For instance, in a social network such as \emph{Facebook}, we have a list of friends and acquaintances that does not change a lot over time (thus, forming static networks). In the proposed concept \cite{kn:NGeCP11}, is discussed the creation of dynamic networks, representative of travellers on a specific line, vehicle, or inside vehicles from different lines that share part of its course between them. That way, a traveller would only receive information from another travellers in the same networks, maximizing the utility of the received information.
+The main goal of this thesis is to develop a user interface for the mentioned system, while performing the following:
+
+\begin{itemize}
+\item Create and analyse appropriate metaphors for the interaction with dynamic social networks.
+\item Design and test innovative visual affordance for the concept of dynamic social networks.
+\item Apply state-of-the-art concepts related with Human-Computer Interaction in order to maximize the usability of the application by its final users, while addressing usability problems identified on the previous existing prototype.
+\item Develop a functional prototype for an Android mobile application based on the obtained from the goals already mentioned.
+\item Perform a pilot test in the field, alongside potential users of the system, and evaluate the obtained results.
+\end{itemize}
+
+\section{Structure of the Report} \label{sec:struct}
+
+Besides the Introduction chapter, this document contains six additional chapters, with the following structure:
+%\todoline{Complete the document structure.}
+Chapter \ref{chap:chap2}, \emph{State-of-the-Art}, presents the definition, explanation and related works in the fields of the concepts in which the project is based upon. It will also present examples of several mobile applications with social network features and/or related to public transport information.
+
+Chapter \ref{chap:chap3}, \emph{Problem Description and Approach}, explains more in detail what is meant to achieve with this work and the problem that is discussed in it, as well as the chosen approach to reach the proposed goals.
+
+Chapter \ref{chap:chap4}, \emph{Requirements Elicitation}, describes the work performed in the initial phase of the process, having the previous state of the project as a starting point to some new design proposals, and the realization of a focus group to perceive user needs and usability requirements.
+
+Chapter \ref{chap:chap5}, \emph{Application}, presents the architecture of the application, and describes the evolution of each main design concept of it, from the first sketches to the implementation phase.
+
+All the performed tests and subsequent results are presented in Chapter \ref{chap:chap6}, \emph{Tests and Results}.
+
+Finally, Chapter \ref{chap:chap7} presents the conclusions taken from this thesis, as well as suggestions about future work to be done in the project and ways it can evolve in order to maximize its reach, and  be integrated with bigger scale solutions.
