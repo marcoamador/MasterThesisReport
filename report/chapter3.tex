@@ -3,16 +3,14 @@
 \section*{}
 
 As described on the section \ref{sec:goals} of the introduction, the project encompasses the creation of a functional prototype for an \emph{Android} mobile application for a platform that uses dynamic social networks and intends to use gamification techniques to improve user engagement. The platform is designed to share information about public transport between travellers.
-
 Before the implementation of the functional prototype, the creation and testing of interface designs is required. 
 The usability and interaction of that interface is fundamental to the platform, because it might make the difference between its success or failure, given that it might attract or repel several users and facilitate or make more difficult the submission of information through the platform.
 
-According to a study performed by Robert Pessagno \cite{kn:Pes10}, "[social networks] acceptance is determined by how easy it is to use them", and that has even more importance in the scope of the project, given that the necessity of having a large base of users feeding the platform with a huge volume of information in real time at any given moment.
+According to a study performed by Robert Pessagno \cite{kn:Pes10}, "[social networks] acceptance is determined by how easy it is to use them", and that has even more importance in the scope of the project, given that the necessity of having a large base of users feeding the platform with a huge volume of information in real time at any given moment. If that does not happen, there is a risk of having lines that have no information. For instance, low transport frequency time periods or lines may lead to inexistent information in those lines or during those periods. Having a greater user base mitigates that risk, though it can still happen.
 
 Given the innovation introduced by the main feature of the project, the dynamic social networks, it is necessary to develop suitable metaphors and create user visual affordance to enable the understanding of that feature by travellers, in a familiar or intuitive way for them.
-
 In the first iteration of the project \cite{kn:eSG12}, usability tests were performed in order to capture possible usability problems with the previously developed interface. 
-Those tests resulted in a set of conclusions that encompassed  usability issues to be addressed and aspects to improve in this new iteration, and it is aimed to use those conclusions as a starting point to this work. 
+Those tests resulted in a set of conclusions that encompassed  usability issues to be addressed and aspects to improve in this new iteration, and it is aimed to use those conclusions as a starting point to this work (see \ref{sec:initial}). 
 
 \begin{figure}[h]
 \begin{center}
@@ -27,6 +25,24 @@ Those tests resulted in a set of conclusions that encompassed  usability issues 
 \end{figure}
 
 \pagebreak
+
+\section{Usability}
+
+Usability can be defined as a measurement for how easy it is to use an interface. Typically, the evaluation or measurement of usability is kept separate from discussions of utility, a characteristic often more influenced by what the interface is connected to (if we're talking about a mobile application, that can be for instance an existing API retrieving data existing in an external server) than the interface itself. 
+Jakob Nielsen, one of the most prominent authors and experts on usability, defines usability as having the following components \cite{kn: Nielsen}
+
+\begin{itemize}
+\item \textbf{Learnability} - How easy it is to users to accomplish basic tasks in the first time they are introduced to the design?
+\item \textbf{Efficiency} - Once the users have passed the learning phase, how quickly can they perform tasks?
+\item \textbf{Memorability} - After a period of not using the interface, how quickly can users remember it and be proficient in the accomplishment of tasks?
+\item \textbf{Errors} - How many errors do the users make while using the interface? What is the severity of those errors and can they recover from them?
+\item \textbf{Satisfaction} - How pleasant is it to use the design?
+\end{itemize}
+
+Following Nielsen's approach, only actual performance by users is worth measuring. However, there are other approaches, for instance the one defined by Patrick Jordan, that include the theoretical performance level achieved when the system being measured is used to its full potential \cite{kn:Jordan}.
+
+Despite the several definitions and approaches, the goal of  (improving) usability, that aims to be accomplished in this thesis work, is to make it faster and easier to users of an interface to achieve their goals and accomplish the desired tasks.
+
 
 \section{User-Centered Design}
 
@@ -71,44 +87,44 @@ This standard has since then been revised and re-issued as \emph{ISO 9241-210}, 
 \item The design team includes multidisciplinary skills and perspectives - The design team should include a range of views, including the voices of accessibility experts, end users, domain experts, etc.
 \end{itemize}
 
-Given those recommendations, the chosen process in order to achieve the expected results has four phases: 
+
+
+Given those recommendations and the referred importance of making the users part of the development process (thus increasing the chance of success of the application among a wider audience), the chosen process in order to achieve the expected results has four phases: 
 
 \begin{itemize}
-\item Requirements Elicitation phase;
-\item Design phase - consists in the creation of alternative low-level designs, along with the usability tests and studies in order to maximize their quality and relevance.
-\item Prototyping phase - Implementation of a chosen design, previously done, as an \emph{Android} mobile application.
-\item Testing phase - Realization of usability tests.
+\item \textbf{Requirements Elicitation phase} - As an initial step, it should include an analysis of what went wrong or what were the perceived disadvantages in the interface previously conceived, followed by additional usability requirements elicitation (assembling a focus group with potential users of the application and regular public transport users);
+\item \textbf{Design phase} - consists in the creation of alternative low-level designs, along with the usability tests and studies in order to maximize their quality and relevance.
+\item \textbf{Prototyping phase} - Implementation of a chosen design, previously done, as an \emph{Android} mobile application.
+\item \textbf{Evaluation phase} - Realization of usability evaluation and analysis of the evaluation results, as the name suggests.
 \end{itemize}
 
-This process is iterative, in order to involve potential users all along the design process and constantly improve the quality of the solution.
+It is worth referring that this process is an adaptation encompassing the iterative process described in \emph{ISO 13407}, where the mentioned Requirements Elicitation phase serves as the first iteration that allows the gathering of a vast amount of information regarding usability requirements, that will result in the production of an initial design, that will be checked against additional requirements.
+
+The following design phase will act as several iterations of the process, constantly evolving the interface and trying to improve the quality of the solution. That phase will end with a usability test with potential users, that will serve as validation of the evolved design in order to pass to the implementation phase.
+
+Finally, the implementation and evaluation phases will act as a final (and long duration, due to the duration of the implementation) iteration of the process. 
 
 \section{Usability Evaluation}
 
-The methods to perform the usability evaluation will encompass: 
+The usual approaches to perform usability evaluation are the following:
 
-\begin{itemize}
-\item Surveys/questionnaires to potential users.
-\item Usability tests perform in a laboratory environment.
-\item Test with users in the field - The realization of a pilot test alongside potential users of the application on a real case scenario is one of the main goals to be achieved after the completion of the interface work.
-\end{itemize}
+\begin{enumerate}
+\item \textbf{Usability testing} - Involves measuring typical user's performance on task accomplishment.
+\item \textbf{Field studies} - Performed in a natural environment (real case scenario)
+\item \textbf{Analytical evaluation} - Does not involve end-users. Two main methods are usually used, heuristic evaluation and/or predictive evaluation. While heuristic evaluation involves the use heuristics (sets of guidelines and standards) and walkthroughs with experts through scenarios of the application prototypes, predictive evaluation is based on theoretical models, in order to predict user performance.
+\end{enumerate}
 
-\section{Usability Tests}
+In this project, usability testing, through potential user observation and questioning, will be employed during the development process (as a tool to help with the validation of the interface), while heuristic evaluation with experts will be employed in a final phase, to evaluate the functional prototype and serve as validation of the implemented interface and serve as a base to possible future improvements.
 
-In the scope of this project, usability testing will be employed in order to test the acceptance of the final result along potential users, as well as comparing different versions of developed interfaces and identify the origin of possible unexpected/unwanted behaviours in its utilization.
+\section{Usability Studies}
 
-Jakob Nielsen, one of the most known authors on the usability field, through deep experience in usability testing, has come up with a set of guidelines, checklists, methods and metrics that can be applied in those tests.
+In order to measure and improve usability of a given project, usability studies are often performed. A usability study serves as an important tool for the evaluation of an User Interface, in which the effectiveness of the User Interface itself is analysed. Based on the results of that evaluation, changes can be made to improve the interface and the interaction of the said project.
 
-Between the set of metrics suggested by Nielsen, it is possible to find: 
+These studies often consist in observing users accomplishing a given set of tasks in the application, or even looking at a User Interface and checking it against common design rules and guidelines \cite{kn:UUW} and identifying the origin of possible unexpected/unwanted behaviours in its utilization. 
 
-\begin{itemize}
-\item Success rate in accomplishing a task.
-\item Number of clicks (or touches) needed to perform a task.
-\item Error rate in accomplishing a task.
-\item Severity of found errors.
-\item Conclusion rate of a task.
-\end{itemize}
+In the scope of this project, usability studies will be performed through the design phase, promoting the correction and improvement of the designed interface and crossing those studies with the results of performed usability tests.
 
-However, the particular set of metrics to be chosen and tested in this project are not yet defined, and should be  defined in a posterior phase.
+
 
 
 
