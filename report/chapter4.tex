@@ -73,7 +73,7 @@ A possible solution to this problem could consist in aggregating both the news f
     \leavevmode
     \includegraphics[scale=0.6]{rate_tab.png}
     \caption{Screenshot of the tab where we could find the rate comment feature.}
-    \label{fig:iso}
+    \label{fig:rate_tab}
   \end{center}
 \end{figure}
 
@@ -95,8 +95,139 @@ After the initial process of perceiving what was done before, as well as underst
 \item Comment, Rate and News Feed features - Can these be aggregated in a way user understands or is familiar with, or it represents an excessive amount of information to be shown in one screen? 
 
 \item Journey Planner features - Could other features with perceived utility to the user be added in order to allow a better comprehension of the concept behind the application, and consequently, a more efficient use (for instance, saving time and avoiding repetitive tasks)?
+\end{itemize}
+
+\subsection{Technology}
+Some thought should be put on the first mentioned topic from the beginning, since the target version of the future application, apart from the possible conditioning of target users (who have outdated \emph{Android} versions on their devices), can influence the implemented interaction, since the newer versions of the operative system have several features related to animations, UI styling and interaction patterns.
+
+The main decision was between sticking with a target version of \emph{Android} 2.x (however, using the API for version 2.3.3 instead of 2.2, because as of February 2014, \emph{Android} 2.2 (Froyo) users represented about only 1\% of all the \emph{Android} devices worldwide) or developing the prototype only for versions equal or superior to 4.0.3 (\emph{Ice Cream Sandwich)}. 
+
+Despite the fact that the users of \emph{Android} versions inferior to 4.0.3 represent about 15\% of total \emph{Android} users, that number will surely reduce with the emergence of newer versions and devices. The 'time to market' of the application is expected to be wide, though, so it is expected that, when a fully implemented and improved version of the project is ready to be launched, those 15\% don't pose a limitation anymore. Apart from that fact, the advantage of developing the application for versions equal or superior to 4.0.3 is huge, because the API versions between \emph{Android} 3.0 and 4.0.3 introduced major improvements to the UI, text input and so on. 
+
+Another important feature of this version is the Action Bar, used in the majority of \emph{Android} applications in order to serve as the main navigation menu of those applications, and that could be used as well in this project. The Action Bar menu came as a replacement for the Context Menu in older versions of \emph{Android}.
+
+\clearpage
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.2]{actionbar.png}
+    \caption{Example of an Action Bar from an \emph{Android} application, displaying the application icon (1), action items (2) and a menu option (3).}
+    \label{fig:action}
+  \end{center}
+\end{figure}
+
+It is also worth mentioning that one of the reasons of that change is the tendency to eliminate physical buttons from mobile devices (the first devices with \emph{Android} 4.0.3, such as \emph{Samsung Galaxy S III}, only had one physical button beneath the screen, resembling what happens with \emph{iOS} devices, and newer devices don't have a physical button beneath the screen at all).  
+
+\subsection{Main Navigation}
+
+About the main application navigation, the initial decision was to stick with a tab navigation, where a tab provided the access to one of the major features or modules of the application. However, there were several other questions that could be relevant:
+
+\begin{itemize}
+\item \emph{Screen position} - Top or bottom. Because we're talking about an \emph{Android} application, the best position would be top of the screen, since the recent versions of \emph{Android}, because of the already mentioned attempts to eliminate physical buttons on the devices, now has a bar on the bottom which has three buttons - \textbf{Back}, \textbf{Home} and \textbf{Recents} (this last one showing recently opened applications.
+
+To put the tab navigation component could lead to user mistakes (touching the mentioned bar instead of the tab navigation). A tab navigation component in the bottom of the screen is, however, pretty common in \emph{iOS} mobile applications. 
+There are a few cases where a navigation bar is placed in the bottom of the screen on \emph{Android}. For instance, when using the Action Bar for navigation, if there are a wide number of options that is desired to show to the user, it is possible to split the Action Bar, having the (usual) top one and another bar at the bottom. 
+
 
 \end{itemize}
 
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.4]{evernote.png}
+    \caption{Example of an application with splitted Action Bar - Evernote. Note also the bottom bar, present in recent devices.}
+    \label{fig:evernote}
+  \end{center}
+\end{figure}
 
-\section{Focus Group}
+\begin{itemize}
+\item \emph{Number of Tabs} - This number would depend on several factors. Visibility to the user is one of them. To have too many tabs, where some of them are initially hidden to the user (just accessible by using the swipe gesture, for instance) may cause those tabs and consequently the features they provide to be 'forgotten' and not as used as intended. 
+
+In the work mentioned in the previous section, there were five tabs, all immediately visible to the user. This was perceived as an high number of tabs shown to the user. Reducing the number of visible (or total) tabs to three or four was explored in order to produce new design solutions.
+
+\item \emph{Information displayed} - The previous prototype had icons representing each tab. There were no text labels displayed, and none of these icons is familiar to the user from similar contexts (applications or websites usage), apart from the icon from the fourth tab, intended to represent the tab containing the user profile. 
+
+Metaphors that users associate with well-defined actions, pages, features or contexts, should not be used in order to represent different actions or contexts, because that will only confuse the user, improving the possibility of errors and confusion by the user. The biggest example of this is the 'save button'. An icon with a 3.5" floppy disk has been used for decades and has spread as representing the "save" action in a certain application. Today, despite the fact the younger generations don't recognise what a floppy disk is, they still associate the icon with saving.
+
+In this case, the icon for the user profile tab as a house, usually associated with the existence of an Home screen or page. However, what was considered the 'Home tab' was in fact the user profile and not the start point of the application, and this issue could lead to errors or confusions from the user point of view.
+\end{itemize}
+
+Considering these points, two alternative designs were conceived for this component, all with four tabs - one with only three tabs visible at a given moment (the selected one should have a visible indicator in order to inform the user from that status), with no icons and just text labels \ref{fig:tabs1}; one with four fixed tabs (all visible), containing both icons and text labels \ref{fig:tabs2}. A slight variation of this one was also designed - with the addition of a coloured circle indicator to show the number of new items on the news feed list \ref{fig:tabs3}.
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.8]{tabs1.png}
+    \caption{Initial draft of the tab component - three visible tabs, only text labels.}
+    \label{fig:tabs1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.8]{tabs2.png}
+    \caption{Initial draft of the tab component - four tabs, icons and text labels.}
+    \label{fig:tabs2}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.8]{tabs3.png}
+    \caption{Initial draft of the tab component - four tabs, icons and text labels, and coloured indicator.}
+    \label{fig:tabs3}
+  \end{center}
+\end{figure}
+
+\subsection{User Profile}
+
+The previous prototype gave the user the chance to check their points, stars and their username on their user profile, as well as change their nickname and a setting that allowed them to hide their nickname to other users. 
+
+An additional button was also available, meant to fetch possible rewards that users could claim using points. Considering this, the displayed information was insufficient, too much free space remained vacant, and that space could be used in order to display other information the users of the application could find useful.
+
+After an initial brainstorming session, there were several ideas about what sort of information could be displayed - user photo/avatar, a map of users in the same temporary network of the user (users who could contribute to the news feed that the user is receiving), information about the line and vehicle the user is in and a check-out button.
+
+Two alternative designs were made, one with and one without the map with users in the same network. Since these initial designs were meant to act as a tool to wider the discussion on a focus group to be made (section \ref{sec:focusgroup}), the goal was to see if the users appreciated the idea of seeing other users (and their points) in the application, and if they were open to see their profile checked-out by other user (even if using the feature that allows to hide the real nickname).
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.45]{profile1.png}
+    \caption{Initial draft of the user profile screen - with network user map.}
+    \label{fig:profile1}
+  \end{center}
+\end{figure}
+
+For the first possibility (the one with the user map), it was also considered that a touch on a user on the map could display a dialog with a short profile of that user (username, points, stars and photo/avatar). That could, however, bring some usability difficulties due to the size of the elements that would represent a user on the map and would probably too small for this type of devices, where the touch gestures generally have low precision.
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.45]{profile2.png}
+    \caption{Initial draft of the user profile screen - without network user map.}
+    \label{fig:profile2}
+  \end{center}
+\end{figure}
+
+\subsection{Comment, Rate and News Feed}
+
+As said before, having the rate functionality separated from the news feed could have been the origin of the difficulty perceived by the users on grasping the feature. Explaining the feature in a more detailed way, after the submission of a comment by a user, that comment would be sent for two random people in the same network, who could verify the correctness of the information. 
+The chosen users would then receive a notification informing them that there were comments left to rate. Only after successfully rated by two users, the comment would be published and available to other users in the network.
+
+Two problems emerge from this system: first, there is the risk of an insufficient number of users in the network to perform the validation; second, because the comment would only be published after two successful ratings, there was also the risk that when those conditions were met the information would not be useful anymore.
+
+The conceived solutions encompassed the aggregation of the rating feature with the news feed, with the 'must-rate' comments from other users appearing with a visual highlight (another background color, for example).
+Both of those solutions involved as well showing the users' own comments in the news feed, aligned to the other side of the screen and also with a different background color to the message, resembling the behaviours usually seen in instant messaging or chat applications, that were since then applied to SMS applications on mobile devices.
+
+The difference between the two solutions is that one of them includes the aggregation of the comment features in the news feed tab as well (joining the comment, rate and news feed features all-in-one), while the other maintains two distinct tabs, one for news feed and rating and another one for submitting a comment.
+
+\subsection{Journey Planner}
+
+
+
+\clearpage
+\section{Focus Group}\label{focusgroup}
