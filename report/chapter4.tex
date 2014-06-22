@@ -225,9 +225,86 @@ Both of those solutions involved as well showing the users' own comments in the 
 
 The difference between the two solutions is that one of them includes the aggregation of the comment features in the news feed tab as well (joining the comment, rate and news feed features all-in-one), while the other maintains two distinct tabs, one for news feed and rating and another one for submitting a comment.
 
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.45]{comment2.png}
+    \caption{Initial draft of the comment, rate and news feed features - all-in-one.}
+    \label{fig:comment2}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.45]{comment1.png}
+    \caption{Initial draft of the comment, rate and news feed features - news feed/rating aggregated, with comment in other tab.}
+    \label{fig:comment1}
+  \end{center}
+\end{figure}
+
 \subsection{Journey Planner}
 
+The previous iteration of the project included a journey planner feature, that could be used by passengers to indicate trips they intend to make in the near future. Ten minutes before the chosen start time for the trip, the users would receive a notification reminding them of the planned trip and asking if they desire to receive information in real-time about the trip.
 
+This feature has some importance in the application concept, because it may allow the system, in the future, to collect data related to the user trip profile, in order to predict, suggest and inform him about trips performed in a regular basis.
 
-\clearpage
+However, despite that possibility of planning a trip, after introducing that plan in the application, the user could not see the introduced plans. This was probably conceived this way to allow a user to plan just one trip for the next hour or so, but if a user wants to plan several trips for one day or week, there is no possibility of checking those trips, putting on the user all the effort to remind them.
+
+Thus, a schedule feature was conceived, in order to give users that possibility, with the goal of catching their interest about the journey planner features.
+
+The existing tab referring to the journey planner was maintained, adding one more screen to that tab (the schedule feature). That included the need for a secondary navigation that would allow the user to choose either the planner or the schedule tab. The considered solutions were a second set of tabs, or a spinner where the user could select the desired option.
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.45]{planner1.png}
+    \caption{Initial draft of the journey planner features - with tabs on the left, with spinners on the right.}
+    \label{fig:planner1}
+  \end{center}
+\end{figure}
+
 \section{Focus Group}\label{focusgroup}
+
+During this phase, in order to define and specify usability requirements, a focus group session was held at \emph{IBM-CAS} room at FEUP.
+
+Focus groups consist in an informal technique used to understand user needs and feelings. This technique can be used at any stage of the development phase, before the design phase or even after the implementation, with the goal of discussing issues and concerns about  the features of an user interface. 
+
+These sessions usually bring together between six and nine users, typically lasting about two hours. A moderator should be assigned to the session, in order to maintain the group's focus \cite{kn: Nielsen07}. 
+
+In this case, the main goal for the session held was to understand what users needed, presenting them the alternatives mentioned on the previous section to discussion. Note that these kind of sessions are not intended to evaluate interface usability (because usually participants do not have the chance to use the product on their own, but instead a demo is presented to the whole group). In this particular case, it was intended to check if the application could solve some of the users' problems regarding public transport information, what could be done to improve that matter and changes regarding the interaction that could lead to that improvement.
+
+Six participants with different backgrounds, age groups and different patterns of public transport use were part of the session. In Table \ref{table:table1}, is it possible to see those characteristics in more detail.
+
+\begin{table}{t}
+
+\begin{center}
+\begin{tabular}{ c c c c p{5cm} }
+
+  \hline 
+  \textbf{\#} & \textbf{Gender} & \textbf{Age Group} & \textbf{Public transport usage profile} & \textbf{Background} \\
+  \hline 
+  1 & Male & 18-30 & Frequent subway user & Public transport related Msc. thesis
+   student \\
+  \hline
+  2 & Female & 18-30 & Occasional bus and subway user & HCI related Msc. thesis student \\
+  \hline
+  3 & Male & 40-60 & Occasional bus and subway user & 20+ years experience with public transport
+  network studies (customer satisfaction
+   and scheduling) \\ 
+  \hline
+  4 & Male & 18-30 & Frequent bus and subway user & Msc. Student in Services Engineering
+   and Management\\
+  \hline
+  5 & Male & 30-40 & Occasional bus and subway user & PhD. Researcher in public transport
+   networks field\\
+  \hline
+  6 & Female & 40-60 & Occasional bus and subway user & PhD. in Operations Research\\
+  \hline
+\end{tabular}
+\caption{Focus group participants characteristics.}
+\label{tab:table1}
+\end{center}
+\end{table}
+
+
