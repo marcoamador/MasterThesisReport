@@ -97,10 +97,10 @@ After the initial process of perceiving what was done before, as well as underst
 \item Journey Planner features - Could other features with perceived utility to the user be added in order to allow a better comprehension of the concept behind the application, and consequently, a more efficient use (for instance, saving time and avoiding repetitive tasks)?
 \end{itemize}
 
-\subsection{Technology}
+\subsection{Technology}\label{technology}
 Some thought should be put on the first mentioned topic from the beginning, since the target version of the future application, apart from the possible conditioning of target users (who have outdated \emph{Android} versions on their devices), can influence the implemented interaction, since the newer versions of the operative system have several features related to animations, UI styling and interaction patterns.
 
-The main decision was between sticking with a target version of \emph{Android} 2.x (however, using the API for version 2.3.3 instead of 2.2, because as of February 2014, \emph{Android} 2.2 (Froyo) users represented about only 1\% of all the \emph{Android} devices worldwide) or developing the prototype only for versions equal or superior to 4.0.3 (\emph{Ice Cream Sandwich)}. 
+The main decision was between sticking with a target version of \emph{Android} 2.x (however, using the API for version 2.3.3 instead of 2.2, because as of February 2014, \emph{Android} 2.2 users represented about only 1\% of all the \emph{Android} devices worldwide) or developing the prototype only for versions equal or superior to 4.0.3 (\emph{Ice Cream Sandwich)}. 
 
 Despite the fact that the users of \emph{Android} versions inferior to 4.0.3 represent about 15\% of total \emph{Android} users, that number will surely reduce with the emergence of newer versions and devices. The 'time to market' of the application is expected to be wide, though, so it is expected that, when a fully implemented and improved version of the project is ready to be launched, those 15\% don't pose a limitation anymore. Apart from that fact, the advantage of developing the application for versions equal or superior to 4.0.3 is huge, because the API versions between \emph{Android} 3.0 and 4.0.3 introduced major improvements to the UI, text input and so on. 
 
@@ -213,7 +213,7 @@ For the first possibility (the one with the user map), it was also considered th
   \end{center}
 \end{figure}
 
-\subsection{Comment, Rate and News Feed}
+\subsection{Comment, Rate and News Feed}\label{rateinitial}
 
 As said before, having the rate functionality separated from the news feed could have been the origin of the difficulty perceived by the users on grasping the feature. Explaining the feature in a more detailed way, after the submission of a comment by a user, that comment would be sent for two random people in the same network, who could verify the correctness of the information. 
 The chosen users would then receive a notification informing them that there were comments left to rate. Only after successfully rated by two users, the comment would be published and available to other users in the network.
@@ -243,7 +243,7 @@ The difference between the two solutions is that one of them includes the aggreg
   \end{center}
 \end{figure}
 
-\subsection{Journey Planner}
+\subsection{Journey Planner}\label{jourplaninit}
 
 The previous iteration of the project included a journey planner feature, that could be used by passengers to indicate trips they intend to make in the near future. Ten minutes before the chosen start time for the trip, the users would receive a notification reminding them of the planned trip and asking if they desire to receive information in real-time about the trip.
 
@@ -307,4 +307,32 @@ Six participants with different backgrounds, age groups and different patterns o
 \end{center}
 \end{table}
 
+As expected, a lot of ideas came up from the session. However, the ideas and discussions pointed in a way where a major redesign or rethinking about the application concept was needed.
 
+For instance, assume that a user wanted to perform a journey between a given point, A, and another given point, B. To go from A to B, several options, transportation methods and routes. In the way the concepts behind the application were currently designed, there was no way that the user could use it in order to make a informed decision about his trip. 
+
+If there are three possibilities to go from A to B, two being distinct bus routes and one being subway, it is useful to the user to check if there is some problem regarding one  or two of these routes (delay, traffic jam, accident and so on) and possibly change the option he would take, saving him time and trouble by giving him the information to perform that informed decision.
+
+Even if the user desires to receive information about other journeys (if they do several different journeys between different points in one way or through the week), this was also impossible to get with the application.
+
+In short, the following problems were faced: 
+
+\begin{itemize}
+\item No possibility of checking the information before entering the vehicle - as the user had to check-in in a route and vehicle prior to  submit and, more importantly, to receive information. 
+\item No possibility of checking more than one route at a time - User only could receive information from the route where he was checked-in, and could only be checked-in at one route. 
+\end{itemize}
+
+If the possibility of receiving information for several trips was introduced, one of the suggestions was the possibility to filter which trip (or trips) the user wanted to see information from, in order to not get lost in the middle of a big volume of information. Taking the same example situation above (three possible routes between A and B), a user should be capable to, despite receiving information from the three routes, to hide one or other just to make the visualization of the information easier, showing it again whenever he wants to. 
+
+The discussed solutions referring user profile information resulted in the conclusion that the users don't feel comfortable seeing the other users in their temporary network, because that would imply their information would be accessible to other users as well. 
+
+Instead, they valued the existence of a record with the user journeys and user statistics about some of the aspects of their journey profile.
+
+All users recognised value in the existence of the schedule feature, and suggested as well the existence of favourite trips, that could easily be added to the trips from which the user desires to receive information.
+
+About the interactions proposed, the main navigation composed by tabs with icons and labels was considered a good way to go. The feedback about the secondary navigation was mixed, but the secondary set of tabs (for journey planner) was considered easier to learn, because the user does not have to open the spinner widget to see all the available options in the secondary navigation.
+
+Some others conclusions pointed to the importance of the rewards given to the users, to improve user engagement with the application, and that the trip aspects that the users value the most are related with security and service quality.
+
+
+In the following chapter it is possible to see the changes that the gathered data and conclusions introduced to the application concept and its features and interaction.
