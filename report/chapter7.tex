@@ -1,9 +1,69 @@
 \chapter{Conclusions and Future Work} \label{chap:chap7}
 
-\section{Data Structure}
+\section{Conclusions}
 
-\section{Integration with existing social networks}
+Usability does not give exactly magic formulas, rules and processes that should be followed every time to get a good and intuitive application, product or solution.
+It includes a wide set of recommendations, guidelines and other methods, based on extensive research, that can lead us to a better final result, but there also lots of trade-offs to be discussed in the process of developing such application or product.
 
-\section{Integration with existing public transport applications}
+In the context of a on going project \cite{kn:Nun12}\cite{kn:NGCP11}, the main goal of this work was to provide better interaction and usability to a innovative mobile application, dedicated to sharing information on public transports \cite{kn:Gon12}, through the definition and application of a user-centred design process. The mentioned application introduces a change in the public transport information system, providing travellers data that is fed to the system by other travellers. To avoid irrelevant and unnecessary information to be shown to a traveller, this application relies on the creation of temporary networks composed by the most relevant passengers at a given time, improving the time and space relevance of said information.
+
+In a first phase, this work aimed to elicit usability requirements for the application among potential users. This stage was performed by holding a focus group session to discuss what the users wanted and ways to improve their engagement with the application and make their understanding of the concepts behind the application much easier.
+
+That initial phase, however, revealed that, in order to achieve those goals for the application (later called Journata), some profound changes about the said concepts were necessary, and that resulted in an extended design phase comparing to what was predicted. 
+The result of the design phase, however, was richer and considered a great step to the potential success of the application, as validated through usability tests (see Chapter \ref{chap:chap6}).
+
+Those tests gave then place to an implementation phase that resulted in a functional prototype, initially planned to be the subject of a pilot test with users in the field. Due to the already mentioned time constraints, that kind of tests were not possible to be performed, and a usability evaluation with experts was held instead (also mentioned in Chapter \ref{chap:chap6}). 
+
+The results of that session were very satisfactory and assessed that this work is a big step in the right direction, but also there is yet a lot to be done and explored (as it can be seen in the following sections). This was seen as a big motivation to keep working in this concept and a confirmation of the huge potential of this application and the influence it can be on solving mobility problems.
+
+\section{Future Work}
+
+Despite the fact that this work can be considered a big step to the fulfillment of all the recognised potential in the application (and possibly helped to figure out solutions to make that potential even higher), there is still a long way to go regarding that matter, and several features regarding usability and architecture of the project can be object of future work.
+
+
+It must also be said that the potential from this application and project was also recognised by external entities, that want Journata or some of its features to be included in a bigger scale project regarding a mobile payment solution for public transports, that intends to dematerialize the public transport titles. 
+The author of this work was selected to be part of that project, where he will have the opportunity to work on the integration of the information sharing features on such a innovative platform for the public transports 'big picture' in Portugal.
+He will also have the opportunity to continue the work performed on this thesis and achieve some of the points mentioned in the following sections, while trying to follow the suggestions obtained in the test phase.
+
+\subsection{Usability and Interaction}
+
+Apart from following the suggestions given by the experts on the evaluation session (see Chapter \ref{chap:chap6}) and implementing the features referred in the designed phase that, due to time constraints, were left aside, the following work could also be done:
+
+\begin{itemize}
+\item Develop an interface layout for landscape view for the entire application.
+
+\item Create alternative locations (translations) and themes for the application. 
+
+\end{itemize}
+
+\subsection{Data Structure}
+
+In order to fully implement the concepts of the application as they were conceived during the design phase of this work, profound changes to the data structure behind the application are necessary. 
+
+\begin{itemize}
+\item Implement the new point system and support the reward model.
+\item Networks should not be entities associated to an unique route or direction. They should be, instead, associated to one user, and to the origin and destination of the journey performed (or intended to be performed) by that same user, containing users in relevant routes to the user journey.
+\item Requests for feed information should be specified through the utilization of a range of time for the desired information, instead of getting only the information since the last request.
+\item Support a way to the transport providers to send relevant information about some routes through the application.
+\item Provide techniques that allow the deduction of travel patterns from the users.
+\item Improve the security of the application denying the access to non-authorized access to data that does not require a login state. 
+\end{itemize}
+
+\subsection{Integration with existing social networks}
+
+Despite the fact that some of the social features considered in the initial phase of this work were left aside, due to concerns shown by the users, there is still possible room to be explored here concerning the integration with existing social networks. 
+
+One possible way is to provide means to register in \emph{Journata} through the use of an account from a widely used social network, such as \emph{Facebook} or \emph{Twitter}, saving the effort to create an account manually.
+Other possibility is the use of the said social networks' friends list to provide the initially thought social features for \emph{Journata} (nearby users, checking other user profile and so on) only for those users who are part of those lists, and also use \emph{Journata}.
+Some work on user statistics and exploring ways to integrate them with gamification concepts could also be used to allow the user to share his data into his social networks' accounts.
+
+
+\subsection{Integration with existing public transport applications}
+
+It would present an advantage to the application if it could be integrated with a system that acted as a substitute for travel tickets. For a start, a validation at an entering and exiting stage from a journey or vehicle (taking advantages of technologies such as NFC or QRCode) would dismiss the necessity of a check-in or check-out features, as it would be an automatic validation process, and it would also allow the gathering of data for deduction of travel patterns.
+
+\emph{Journata} would also have a lot to gain with the integration with services such as the API used by MOVE-ME \footnote{\url{http://www.move-me.mobi/}} as a source for its auto-complete and journey planner features, as it contains not only the bus, train and subway stations, but also information and location of interest points that could also be set as origins or destinations for journeys. This specific API is obviously only for a limited scope of emph{Journata}, concerning the data of the city of Porto. 
+
+
 
 

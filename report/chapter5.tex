@@ -187,8 +187,6 @@ That way, if an user wanted to retrieve information between A and B, and three p
 \end{figure}
 
 
-
-
 However, this design had several limitations. For example, the user usually has a hard time identifying the exact vehicle he's in (despite the fact that an hour on the schedule can be used to identify the vehicle, that vehicle can be running late, for instance. In case of transportation methods that have high frequency, such as subway, the difficulty of such a task is even higher).
 
 
@@ -221,7 +219,7 @@ A different highlight color for the user's own comments was also selected, in or
 Each item would also have the option to give a star to the comment author, if the comment in question was considered particularly helpful. 
 
 
-As said before, it was decided to aggregate the comment rating feature in the view feed screen, and the initial thought in how to do that was to highlight the items with pending user review in the top on the feed, despite possibly being older than some of the already approved comments. Those comments would also have a button that, when triggered, would prompt a dialog to the user making it possible to define and submit the rating about the referred comment (figure \ref{fig:feed_iter1_view}).
+As said before, it was decided to aggregate the comment feature in the view feed screen, and the initial thought in how to do that was to highlight the items with pending user review in the top on the feed, despite possibly being older than some of the already approved comments. Those comments would also have a button that, when triggered, would prompt a dialog to the user making it possible to define and submit the rating about the referred comment (figure \ref{fig:feed_iter1_view}).
 
 \begin{figure}[htb]
   \begin{center}
@@ -272,7 +270,7 @@ The confirmation dialog for feed removal (or for any task at all) is considered 
 
 \subsubsection{Implementation} 
 
-The implementation of this module of the application tried to follow as much as possible the design from the second iteration. Several screens for situations where no information was available were designed and implemented (for when the user does not have any feeds subscribed, prompting him to do so in order to benefit from the usage of the application).
+The implementation of this module of the application tried to follow as much as possible the design from the second iteration. Several screens for situations where no information was available were designed and implemented (for when the user does not have any feeds subscribed, prompting him to do so in order to benefit from the usage of the application. This was done following the principles for feedback referred on Dan Saffer's \emph{Microinteractions}\cite{kn:Saffer}).
 
 One question that was not considered in the design phase was the transition between the 'View Feed' feature and the other features in this component, that had navigation between them through the utilization of a secondary navigation. For that matter, a new tab was added to that secondary navigation, in order to allow that transition and make it as easy as possible to the user (through the touch on the desired feature tab/button).
 
@@ -304,19 +302,17 @@ A feature that was not included in the previous design iterations was the possib
 
 Note that each comment has two buttons next to it, instead of the star that was part of the interfaces designed in previous iterations, and also that there are no highlighted comments prompting the user to rate them. This has been adapted due to changes in the point and rating system.
 
-\subsubsection{Point System Redesign}
+\subsubsection{Point System Redesign}\label{points}
 
 The limitations identified in section \ref{rateinitial}, alongside with the deprecation of \emph{Google Cloud to Device Messaging Framework}, that was beneath the previous existing rating system, led to the development of a whole new (and simpler) rating system, consisting in giving a 'thumbs up' or 'thumbs down' to a comment. Each 'thumbs up' adds one point to the score of the comment in question, while a 'thumbs down' subtracts one point from that score. That comment score is called 'feedback', and comments with negative feedback score are hidden from the news feed of other users. 
 
-This also lead to a creation of a new field in the data structure referring to the user data: feedback points, which is the sum of the feedback score of all of the user's comments.
+This also lead to a creation of a new field in the data structure referring to the user data: feedback points, which is the sum of the feedback score of all of the user's comments. Due to the creation of the feedback points, it was also decided to eliminate the 'stars' that could be given to a very useful comment.
 
-Those two buttons we can encounter to the right of the displayed comments in figure \ref{fig:feed2}, with the shape of an arrow, represent the 'thumbs up' and 'thumbs down' actions.
+Those two buttons that can be encountered to the right of the displayed comments in figure \ref{fig:feed2}, with the shape of an arrow, represent the 'thumbs up' and 'thumbs down' actions.
 
-In order to display the right information, additional changes to the API were made. The existing implementation required an existing login and check-in in order to retrieve the set of information from a network, retrieving only the information for the network where the user was checked-in. Changes to that 'request' method had to be made in order to retrieve data from any network without those limitations.
+In order to display the network feed information, additional changes to the API were made. The existing implementation required an existing login and check-in in order to retrieve the set of information from a network, retrieving only the information for the network where the user was checked-in. Changes to that 'request' method had to be made in order to retrieve data from any network without those limitations.
 
-\newpage
-
-\subsection{Comment Submission}\label{comment}
+However, a problem that was not possible to overcome in a timely manner was that the existing data structure for representing the networks did not allow to fetch the origin and destination of those networks in the feed, despite what has been discussed in the design phase. The only useful information that can help the user identifying the network the information refers to is the number of the bus route (the current data set used only bus stops and routes from the city of Porto). This is expected to be corrected in a near future.
 
 \subsection{Authentication}\label{authentication}
 
@@ -386,7 +382,181 @@ The use of the \emph{Android} Action Bar as part of the interface allowed to cre
 
 Another concern during the development was the persistence of data after pausing or exiting the application. In the implementation of the prototype, all the data regarding the user login and profile is stored locally, in order to be accessible when entering the application again, after pausing or closing it. That said, the application does not require the user to login again after the first utilization (unless, of course, the user logs out in order to use other account).
 
+\newpage
+
+\subsection{Comment Submission}\label{comment}
+
+The submission of comments was always based in the assumption that the user would need to be checked-in in a network, and therefore would need to be logged-in in the application in the first place. 
+The features associated to this concept have somewhat not changed too much since the first design performed in this work.
+
+The main interaction flow conceived was the following:
+
+\begin{itemize}
+\item Check-in on a network - this would consist in selecting an origin and destination, in a very similar process for what is necessary to add a feed subscription.
+\item The main comment menu is presented to the user. In this menu, the user can choose to submit a written comment or to choose one of the previously defined categories of comments, pressing the button for the desired category.
+\item A dialog would be presented to the user, containing the several aspects the user can classify inside the chosen category. For each item, a slider with several possible values and a submit button is available, so that the user can submit his feedback for every value individually. The selected value, for the selected aspect, is then converted in a textual comment that will be submitted to the network's news feed. The choice for a dialog, despite not being exactly a good usability guideline, went through because it would allow the users to easily dismiss the dialog and change for another comment category, saving them the effort of navigating for a different screen and then go back if they wished to comment on an aspect from a different category.
+\end{itemize}
+
+\subsubsection{First Iteration}
+
+As mentioned before, the first design iteration after the focus group assumed that several simultaneous check-ins from the same user were possible. For that matter, after the first step of performing the check-in, the user would need to choose what was, from within the several simultaneous check-ins, the network where he is in the current moment, in order to submit information to that network.
+This was meant to be done in the main comment menu. A spinner would present to the user all the existing check-ins, from where he would need to choose the right one (figure \ref{fig:comment_iter1}).
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.5]{comment_iter1.png}
+    \caption{Comment menu - First Iteration.}
+    \label{fig:comment_iter1}
+  \end{center}
+\end{figure}
+
+The chosen method to submit a written comment was to have a text field, along with a submit button, in the main comment menu, so that the task of entering and submitting that type of comment would require as little time as possible.
+
+\newpage
+
+\subsubsection{Second Iteration}
+
+Having simultaneous check-ins posed yet another problem, and this one related with the comment submission. If the user could choose a network from his checked-in networks to mark as the 'current one', and submit information to that network, there would be no guarantee that the user is currently performing that journey, existing the possibility to him to submit information for all the networks he wants. This was another reason that led to the regression (at least in what concerns to comment submission) to a 'single check-in' system.
+
+The spinner mentioned in the first iteration would then be replaced for the information about the network (origin, destination, transportation method and route, when applicable). This would also require the creation of an intermediate screen between the check-in and the comment menu, where the user selects the transportation method and route where he's travelling, because the revised concept of network for this second iteration implies the network includes any option and route between the selected origin and destination, but the information about the vehicle route will be relevant for users seeing the submitted comments in their feeds.
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.48]{comment_iter2_1.png}
+    \caption{Check-in and definition of route - Second Iteration.}
+    \label{fig:comment_iter2_1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.48]{comment_iter2_2.png}
+    \caption{Comment menu and classification dialog - Second Iteration.}
+    \label{fig:comment_iter2_2}
+  \end{center}
+\end{figure}
+
+\newpage
+\subsubsection{Implementation}
+
+The implementation of these features tried to follow as much as possible what was established in the second design iteration. The only difference to register is that the intermediate step, where the user defines the route where he's travelling, was not necessary because the current representation of a network included only a route and direction, and the only transportation method in the database is bus, there was only a choice to be made in that screen if it were implemented. For this prototype, it was decided not to.
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.45]{auth1.png}
+    \caption{Screenshots of the implementation of check-in and comment submission features.}
+    \label{fig:comment_impl}
+  \end{center}
+\end{figure}
+
+The check-out feature was also implemented, and can be encountered in the menu available in the Action Bar. Performing the logout action while checked-in will also trigger the check-out action.
 
 \subsection{Journey Planner Features}\label{journeyplanner}
 
-\subsection{User Profile}
+For this module, the suggestions given by users on the focus group session were crucial to the definition of the following features:
+
+\begin{itemize}
+\item \textbf{Favourites} - User adds a feed subscription (through a similar workflow used to add a feed to the current subscriptions) to a list of his favourite feeds. In that list, user can easily activate any of those feeds through pressing a checkbox. This way, a user does not need to be constantly adding and removing the same feed subscription everytime he wants to receive information for a given journey that he happens to do with reasonable frequency.
+When a favourite feed is activated, is it automatically added to the current subscribed feeds (along with the others added on the 'Feed' module of the application).
+\item \textbf{Schedule} - Allows the user to see a list of journeys he planned for the future, with the associated date and time. The journey planner features that made part of the previous developed prototype \cite{kn:Gon12} were included here in order to be possible to add new plans to this schedule.
+\end{itemize} 
+
+The journey planner, as it was initially conceived, was also intended to send notifications to the user ten minutes before a planned journey was scheduled to start, in order to ask to the user if he wanted to receive information from the corresponding network. 
+
+With the deprecation of \emph{Google Cloud to Device Messaging Framework}, these notifications were eliminated, and the idea was to automatically add the feed subscription for the network referring the planned journey to the list of current feed subscriptions, activating that feed as a default. That action would be triggered 30 minutes before the planned start time for the journey, so that the user can receive some information beforehand about what is happening in the network, and it would be automatically deactivated one hour and a half later (it could also be manually deactivated as well).
+
+\subsubsection{Iterations}
+
+The difference between the two main design iterations happened in the screen where the used could plan a new journey (in other words, add a new journey to the schedule).
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.5]{planner_iter1.png}
+    \caption{Favourites and Schedule features - First Iteration.}
+    \label{fig:planner_iter1}
+  \end{center}
+\end{figure}
+
+For the second iteration, it was decided not to limit the selection of the date of a planned journey to a single day, and to allow planning of repetitive tasks (very similar to what is allowed in alarm applications), selecting the days of the week when the user plans to do the journey.
+
+About the introduction of text in the origin and destination fields, the same principles applied in similar tasks in the application were also applied here, with the existence of auto-complete and the button to switch the origin and destination fields content.
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.5]{planner_iter2.png}
+    \caption{Favourites and Schedule features - Second Iteration.}
+    \label{fig:planner_iter2}
+  \end{center}
+\end{figure}
+
+\subsubsection{Implementation}
+
+The implementation followed what was established in the design phase. However, there were room for some changes, such as fixing the position of the buttons at the end of the lists (favourites and schedule) in order to be coherent with the implementation of the remaining modules and allow the user to perform the majority of the main application flow through the press of well-sized buttons at the bottom of the screen.
+
+An external library was also used to help with the implementation of the date (with repetitive tasks) and time 'pickers' for the journey planner, \emph{DateTimePicker}\footnote{\url{https://github.com/flavienlaurent/datetimepicker}}, that contained the attractive widget for those type of tasks that is also possible to find in the most recent versions of \emph{Google Calendar} application.
+
+\newpage
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.5]{auth1.png}
+    \caption{Screenshot of the implementation of the favourites and schedule lists.}
+    \label{fig:planner_impl}
+  \end{center}
+\end{figure}
+
+\newpage
+
+\subsection{User Profile}\label{userprofileimpl}
+
+After the focus group and the fears shown by the users regarding seeing other users in the same network and having his own data (despite limited) possibly visible to other users, it was decided to change the information displayed in the user profile screen to match some of the suggestions given in that session, such as user statistics, along with some of the initially predicted information to be displayed:
+
+\begin{itemize}
+\item Username
+\item Points
+\item Stars
+\end{itemize}
+
+The additional information selected, apart from user statistics, was:
+
+\begin{itemize}
+\item List of available rewards (claimed with points).
+\item User photo (with the option to upload a new one).
+\item Option to change privacy settings (changing the visibility of username and photo).
+\end{itemize}
+
+In a first draft, it was also considered the inclusion of a check-out button in this screen, but that option was discarded because it was believed that it made little sense to have that option in this tab due to low visibility to the user.
+
+After that decision, there would be no changes at all to the interface designed as a first iteration.
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.45]{profile_iter1.png}
+    \caption{User Profile screen - Design phase.}
+    \label{fig:profile_iter1}
+  \end{center}
+\end{figure}
+
+\subsubsection{Implementation}
+
+The implementation phase for the user profile module followed the interface conceived in the design phase. However, due to the reformulation in the points system (see section \ref{points}), the information about the stars given to the user was replaced by the information about his feedback points.
+
+\begin{figure}[h!]
+  \begin{center}
+    \leavevmode
+    \includegraphics[scale=0.45]{auth1.png}
+    \caption{Screenshots of the implementation of user profile screen.}
+    \label{fig:profile_impl}
+  \end{center}
+\end{figure}
+
+The privacy settings feature was also moved to the \emph{Android} Action Bar, giving his place in the screen to a button that allows the user to see his statistics.
+

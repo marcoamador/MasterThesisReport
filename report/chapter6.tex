@@ -6,13 +6,117 @@ The tests presented in this section aimed to evaluate the quality of the interfa
 
 It also aimed to gather some conclusions on perspectives to the evolution of the application, such as future integration with larger-scale applications or projects in the public transport applications field.
 
-\section{Preparation and execution}
+\section{Usability Test}
 
-\section{Results}
-
-\section{Interpretation}
-
-\section{Summary}
+The work performed during the design phase, as established in Chapter \ref{chap:chap5}, led to deep changes regarding the application features, navigation and the concepts behind the application. To validate those concepts before the implementation phase, it was decided to perform an usability test.
 
 
+During one week, some people were asked to use a low-level prototype and try to accomplish a predefined set of tasks, and give their feedback about the application and their possible difficulties in grasping the concepts behind it, in a controlled environment.
 
+To guide users during this test, a script was presented to them (see Appendix \ref{ap2:usabtest}). This script was divided in two parts, a first one presenting a set of specific tasks to be accomplished through navigation and a second one where some questions to collect feedback about certain aspects were asked to the testers.
+
+Following Jakob Nielsen's recommendation for qualitative user research \cite{kn:MobileUsab}, this test was presented to 6 subjects, with the majority of them being different from those who were in the focus group session previously made.
+
+All of them are frequent public transport users and reside in the Porto Metropolitan Area, have a smartphone and have ages comprehended within 18 and 25 years old. It was attempted to have a equal gender distributed sample , but that was not achieved in a timely manner. The sample ended up having 67 percent male subjects and 33 percent female subjects.
+
+The presented set of tasks included: 
+
+\begin{itemize}
+\item Adding new feed subscriptions.
+\item Filter the visible feed subscriptions.
+\item View feed information.
+\item Remove a feed subscription.
+\item Rate another user comment.
+\item Submit a written and a categorised comment.
+\item Check the favourite journeys.
+\item Check the scheduled journeys and add one journey to that list.
+\item Check the user profile.
+\item Check the rewards list.
+\end{itemize}
+
+The users were also asked to classify the perceived difficulty (from 1 to 5, where 1 represents very difficult and 5 represents very easy) of the interaction for each task and to assess the clarity of the messages and text presented by the application.
+
+The set of tasks that included adding a new feed subscription were perceived as easy. However, despite that perception, there were some difficulties in understanding the meaning of the concept and what information was included in the feed. After understanding, however, the subjects appreciated the simplicity of the task. This task had an average classification of 4.3 out of 5.
+
+Both the filtering and removal of feeds were perceived as very easy to do and to understand. However, it was observed that the users took some time to figure out how to perform the removal of a feed, because there is no indication or visual element indicating that this is an option. All the subjects, however, assumed after that additional time that there would be a menu available after a touch on an item of the list, but that is possible related to the existing experience with smartphones from those subjects. The average classification for the filtering task was 5 out of 5, while the removal task had an average classification of 4.5 out of 5.
+
+Viewing the feed information as perceived by the users as a simple and attractive task, especially due to the text representation of categorised comments in the feed and to the information elements that identified the specific journey from where the comments are submitted. The average classification for this task was 4.9 out of 5.
+
+The rate comment feature, despite the fact that the users considered the interaction that leads to it as easy to learn, there were difficulties in understanding what that feature would do, and why would the users 'need' to rate other users' comments, specially as they didn't receive any reward from that. The average classification for this task was 4.7 out of 5.
+
+Submitting a comment was perceived as a task of very reduced difficulty, and good feedback about the transition between producing a categorised comment and switching back in order to choose another category or to submit a written comment was received. The average classification for this task was 5 out of 5.
+
+Both the favourites journeys and schedule features were perceived as very useful and with simple interaction, since they are as well available in other applications. The option for setting a scheduled journey as a possible repetitive task, for certain days of a week, for example, was seen as very useful and very easy and intuitive. 
+The average classification for this task was 4.7 out of 5.
+
+Checking the user profile was one of the tasks perceived as more obvious, as well as checking the list of possible rewards. Both the 
+tasks had an average classification of 5 out of 5.
+
+Therefore, it was concluded that it was necessary to redesign the rate and points system in order to make it attractive to the user to understand. An easier definition of that system, perhaps related to another feedback system widely used in other social websites or applications, would provide that better understanding and probably captivate the user to give feedback about other users' comments. It would also be useful to arrange a way to allow easier understanding of the concept of feed subscription and the amount of information associated to it. This aspects would had to be taken under consideration in the implementation phase.
+
+\section{Evaluation by Experts}
+
+In the end of the implementation phase, a session for evaluate the usability and interaction of the obtained functional prototype was held at OPT's offices, in Porto. 
+
+Five of the company's experts on usability and application development for public transports (both mobile and web applications) were present in this session, to act as experts and provide feedback about the developed application.
+
+
+To the experts, it was provided the script used in the usability test previously performed with users, and a brief session was held before the evaluation to explain some of the concepts behind the applications and some of the changes occurred during this process.
+After that brief introduction, all of the experts were asked to freely explore the functional prototype of the application, while observed by the author of this work, in order to register the problems encountered, the suggestions and to discuss possible improvements.
+
+Some test accounts were created before the session and their authentication credentials were provided to the experts, despite the fact that they were also encouraged to create new accounts if they wanted to.
+
+There were also provided some routes with a vast amount of existing information in the application database as a suggestion in order to give them full utilization experience of the application.
+
+\subsection{General Evaluation}
+
+The general consensus among the experts was that this was an application very easy to use, with a 'linear' navigation in most cases, with the flow between screens inside an use case occurring through a button on the bottom of the screen.
+
+Despite that, several usability and interaction problems were detected during the session (some of them related with bugs in the implementation):
+
+\begin{itemize}
+\item When the user initially enters the application, an information that he has no feeds subscribed is displayed. However, and in contrary to what happens in other modules of the application, there is no button in the bottom of the screen redirecting the user to that feature, causing some confusion on the user regarding the existence of a trigger on clicking the displayed information text or leading him to explore other features inside the module and wasting unnecessary time in navigation.
+
+\item Regarding the comment submission module, some messages displayed to the user had the wrong information, and others did not make the process of user checking-in on a network before comment submission explicit enough. Despite not having great influence in the user perception of the feature, it does not give him the perception that he is checked-in and he can perform check-out. This is amplified by the fact that the access to the checkout feature is hidden on the Action Bar.
+One suggestion to solve this problem is to take advantage of the existing free space on the main comment menu and add a button allowing the user to perform check-out.
+
+\item The position of the text field to submit a written comment is causing the \emph{Android} keyboard to hide its content, forcing the user to write his comment 'blindly'.
+
+\item The selection of items in lists of results (adding a feed, for example) has a problem regarding consistency of interaction. The existence of a checkbox leads some users to click inside the checkbox or to click the list item. Due to problems during the implementation, a decision was made in order to associate the selection to the click of the bigger target (the list item), since the checkbox has a reduced size. However, the users who clicked inside the checkbox had problems, and improving the consistency between the two types of interactions to change the selection state is required.
+
+\item The auto-complete feature should return the options that do not necessarily start with the introduced text, but those who contain it.
+
+\item The upvote ('thumbs up') and downvote ('thumbs down') buttons size was perceived as too small and too close from each other. Displaying the feedback points from a comment would be a good information to show along with the buttons.
+
+\item The text representation of categorised comments can be improved for readability. The representation used as an example in the prototypes from the design phase were perceived as better when comparing to the representation used in the functional prototype.
+
+\item A timeout should be implemented for the written comment submission and for each item in the categorised comment submission, to avoid possible \emph{spamming} of comments in the platform.
+
+\item A 'send all' button should be introduced at the end of the categorised comment categories dialogs in order to save some clicks to the user (a timeout should also be implemented).
+
+\item More thought should be put on the location of the favourites and scheduled list. Since they are now the centerpiece and moved the journey planner to the background (as a method to use those features, and not as the feature itself), and since they are related with feed subscription (it is essentially a list of favourite feeds and a feed subscription scheduler), perhaps they would be better located if they were in the 'feed' module, but that would also imply having too many features concentrated in that navigation tab.
+\end{itemize}
+
+Concerning difficulties from the users in grasping the concepts behind the application, it was recognized by the experts that one of the more important and difficult questions raised by the application resides in the way to identify the specific vehicle where the users who comment are travelling, in order that the user receiving information can understand what vehicle is mentioned in the comments (this gains even more importance in high frequency routes or services).
+About the feed subscription concept, a recommendation was given in order to simplify it and limit the feed to courses with monomodal transportation and without changing routes/lines. That would represent the majority of the journeys and facilitate the understanding of the concept for a big number of users. The remaining ones would need to add several feeds instead of one, depending on their course. This would also make the user have less course alternatives and receive less (and possibly more relevant) information when performing long multi-modal journeys.
+
+The new rating system was appreciated by its simplicity (and the several limitations of the previous system were also recognized and discussed). Some possible future improvements of the new system were also suggested, such as the implementation of point rewards for 'thumbs-up' or 'thumbs-down', since the users are performing the comment validation for the platform, and also that the understanding of those actions should be clarified, in order to represent more like an agreement with the submitted comment and less like a 'like/dislike'. This way, a user would be lead towards not submitting a comment with the same information that was already submitted (because that would award him points) and less redundant and more reliable information would be produced.
+
+\subsection{Suggestions and Observations}
+
+The following suggestions were also given by the experts (some of them were the subject of discussion about how they could work and some of the trade-off involved):
+
+\begin{itemize}
+\item Aggregating more than one 'reviewed' aspect in just one comment (making the current comments information 'chunks' of a bigger comment) would be a nice thing to introduce. It would reduce the quantity of request from the application to submit a comment, and it could be presented as only one item in the feed. 
+
+Currently, if the user wishes to submit a comment about several aspects, submitting them individually, other user who wants to check the network feed information would have to scroll to see information submitted by other users because he would see several items in the feed referring to those several submissions, when he could be seeing just one item (that he could click to see in detail).
+
+\item Swipe gesture should not only navigate between tabs from the primary navigation, but also the secondary one. For instance, if the user is in the 'View Feed' screen, a swipe to the left should lead him to the 'Select Feeds' screen, and not to the 'Comment' tab. Only if the user is on the 'Receive New Feed' (the last one on the secondary navigation for the first tab) and performs the same gesture should he be led to the 'Comment' tab.
+\end{itemize}
+
+To conclude this section, two additional observations during the tests were registered by the author:
+
+\begin{itemize}
+\item Despite having the possibility to navigate between tabs by using swipe gestures, users almost always used the click on the desired tab to navigate.
+\item All the experts expected an action by clicking on a comment item on the view feed feature. It was unsure if this was caused by the background color on the comment text, but this remark can be used along with the 'aggregated comment' recommendation given above to serve as a possible positive feedback of the implementation of that feature. It shows that the visible metaphor seems to be there already for the users, but with no functionality.
+\end{itemize}
