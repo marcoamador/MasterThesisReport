@@ -1,65 +1,83 @@
-\chapter{Usability Test} \label{ap2:usabtest}
+\chapter{Usability Test Script} \label{ap2:usabtest}
 
-Depois das conclusões e antes das referências bibliográficas,
-apresenta-se neste anexo numerado o texto usado para preencher a
-dissertação.
+\section{Introduction}
 
-\section{O que é o \emph{Loren Ipsum}?}
+This document intends to serve as a script to the realization of an usability test of an interface for a mobile application to be implemented for the \emph{Android} mobile operating system.
+This application has features of a social network, and aims at sharing information about public transport networks, with that sharing component being performed by the users of the platform.
 
-\emph{\textbf{Lorem Ipsum}} is simply dummy text of the printing and
-typesetting industry. Lorem Ipsum has been the industry's standard
-dummy text ever since the 1500s, when an unknown printer took a galley
-of type and scrambled it to make a type specimen book. It has survived
-not only five centuries, but also the leap into electronic
-typesetting, remaining essentially unchanged. It was popularised in
-the 1960s with the release of Letraset sheets containing Lorem Ipsum
-passages, and more recently with desktop publishing software like
-Aldus PageMaker including versions of Lorem Ipsum~\citep{kn:Lip08}. 
+This test aims to perform the validation of low-level prototypes developed in order to provide an interface and an interaction flow to the mentioned application.
 
-\section{De onde Vem o Loren?}
+To the realization of this test, a sequential set of tasks should be performed by the users. It is intended to evaluate the easiness of interaction between the user and the proposed interface, with the purpose of detecting and solving possible problems before an implementation phase.
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It
-has roots in a piece of classical Latin literature from 45 BC, making
-it over 2000 years old. Richard McClintock, a Latin professor at
-Hampden-Sydney College in Virginia, looked up one of the more obscure
-Latin words, consectetur, from a Lorem Ipsum passage, and going
-through the cites of the word in classical literature, discovered the
-undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-1.10.33 of ``de Finibus Bonorum et Malorum'' (The Extremes of Good and
-Evil) by Cicero, written in 45 BC. This book is a treatise on the
-theory of ethics, very popular during the Renaissance. The first line
-of Lorem Ipsum, ``Lorem ipsum dolor sit amet\ldots'', comes from a line in
-section 1.10.32.
+\section{Socio-demographic questions}
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-below for those interested. Sections 1.10.32 and 1.10.33 from ``de
-Finibus Bonorum et Malorum'' by Cicero are also reproduced in their
-exact original form, accompanied by English versions from the 1914
-translation by H. Rackham.
+\subsection{Age}
+\begin{itemize}
+\item 18-25
+\item 25-30
+\item 30-40
+\item 40-50
+\item 50+
+\end{itemize}
 
-\section{Porque se usa o Loren?}
+\subsection{Gender}
+\begin{itemize}
+\item Male
+\item Female
+\end{itemize}
 
-It is a long established fact that a reader will be distracted by the
-readable content of a page when looking at its layout. The point of
-using Lorem Ipsum is that it has a more-or-less normal distribution of
-letters, as opposed to using ``Content here, content here'', making it
-look like readable English. Many desktop publishing packages and web
-page editors now use Lorem Ipsum as their default model text, and a
-search for ``lorem ipsum'' will uncover many web sites still in their
-infancy. Various versions have evolved over the years, sometimes by
-accident, sometimes on purpose (injected humour and the like). 
+\subsection{How frequently do you use public transports?}
+\begin{itemize}
+\item Frequently (1-5 times per week).
+\item Often (1-5 times per month).
+\item Rarely (1-10 times per year).
+\item Never.
+\end{itemize}
 
-\section{Onde se Podem Encontrar Exemplos?}
+\subsection{Are you a smartphone owner and user?}
+\begin{itemize}
+\item Yes.
+\item No.
+\end{itemize}
 
-There are many variations of passages of Lorem Ipsum available, but
-the majority have suffered alteration in some form, by injected
-humour, or randomised words which don't look even slightly
-believable. If you are going to use a passage of Lorem Ipsum, you need
-to be sure there isn't anything embarrassing hidden in the middle of
-text. All the Lorem Ipsum generators on the Internet tend to repeat
-predefined chunks as necessary, making this the first true generator
-on the Internet. It uses a dictionary of over 200 Latin words,
-combined with a handful of model sentence structures, to generate
-Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is
-therefore always free from repetition, injected humour, or
-non-characteristic words etc. 
+\subsection{Please state your city of residence.}
+
+\section{List of Tasks to Accomplish}
+\begin{itemize}
+
+\item \textbf{Task 1 -} Add a new feed, entering manually the origin and destination you desire. For the sake of this test, enter 'S. Bento' as the desired origin.
+
+\item \textbf{Task 2 -} Add to of the displayed results to your current feeds (for instance, \textbf{S.Bento - Campanhã and S.Bento - General Torres}).
+
+\item \textbf{Task 3 -} Check the list of current subscribed feeds. Verify that those you added make part of that list.
+
+\item \textbf{Task 4 -} Hide the information from the feed referring to '\textbf{S.Bento - General Torres}'.
+
+\item \textbf{Task 5 -} Remove one of the feeds (\textbf{Hospital S. João - Trindade}). Verify that it's no longer part of the list.
+
+\item \textbf{Task 6 -} Read the information coming from the feeds subscribed.
+
+\item \textbf{Task 7 -} Rate another users' comment.
+
+\item \textbf{Task 8 -} Assume that you've just entered a bus from the route 604, with destination \textbf{Sto. Ovídio}. Submit a written comment about that trip.
+
+\item \textbf{Task 9 -} Submit another comment about the trip, this time regarding the noise on the vehicle.
+
+\item \textbf{Task 10 -} Access your favourite journeys list. Assume that there are already two there (\textbf{Trindade - Sto. Ovídio} e \textbf{Trindade - Foz}). Deactivate the one that is currently active.
+
+\item \textbf{Task 11 -} Check your scheduled journeys. Add another journey to the same list.
+
+\item \textbf{Task 12 -} Consult your user profile. Enter the list of reward to check the discounts you can claim with your current amount of points.
+\end{itemize}
+
+
+\section{Post-task questionnaire}
+
+In a scale from 1 to 5, with 1 representing 'very hard' and 5 considered 'very easy', classify your perception of the difficulty of the task, based on the simplicity of the interaction and the clarity of messages displayed in the interface.
+
+Finally (and optionally) give an answer to these questions:
+
+\begin{itemize}
+\item Would you use an application such as this in your daily routine?
+\item What captivates you more about the application (one specific feature, the possible rewards, etc.=?
+\end{itemize}

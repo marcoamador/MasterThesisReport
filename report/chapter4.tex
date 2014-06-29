@@ -10,9 +10,9 @@ In the last section, the referred redesign, consisting in several alternative so
 
 \section{Previous work}
 
-As said before, the initial work on this project encompassed the initial implementation of the concept referred on \cite{kn: Nun}, including a first prototype of an \emph{Android} mobile application. This prototype was made using \emph{Android} API level 8, being compatible with mobile devices running at least version 2.2 of the operative system.
+As said before, the initial work on this project encompassed the initial implementation of the concept referred on \cite{kn: NGeCP11}, including a first prototype of an \emph{Android} mobile application. This prototype was made using \emph{Android} API level 8, being compatible with mobile devices running at least version 2.2 of the operative system.
 
-This prototype had the following set of features \cite{kn:Gonc}
+This prototype had the following set of features \cite{kn:eSG12}
 
 \begin{itemize}
 \item Login
@@ -100,7 +100,7 @@ After the initial process of perceiving what was done before, as well as underst
 \subsection{Technology}\label{technology}
 Some thought should be put on the first mentioned topic from the beginning, since the target version of the future application, apart from the possible conditioning of target users (who have outdated \emph{Android} versions on their devices), can influence the implemented interaction, since the newer versions of the operative system have several features related to animations, UI styling and interaction patterns.
 
-The main decision was between sticking with a target version of \emph{Android} 2.x (however, using the API for version 2.3.3 instead of 2.2, because as of February 2014, \emph{Android} 2.2 users represented about only 1\% of all the \emph{Android} devices worldwide) or developing the prototype only for versions equal or superior to 4.0.3 (\emph{Ice Cream Sandwich)}. 
+The main decision was between sticking with a target version of \emph{Android} 2.x (however, using the API for version 2.3.3 instead of 2.2, because as of February 2014, \emph{Android} 2.2 users represented about only 1\% of all the \emph{Android} devices worldwide) or developing the prototype only for versions equal or superior to 4.0.3 (\emph{Ice Cream Sandwich)} \cite{kn:Goo14}. 
 
 Despite the fact that the users of \emph{Android} versions inferior to 4.0.3 represent about 15\% of total \emph{Android} users, that number will surely reduce with the emergence of newer versions and devices. The 'time to market' of the application is expected to be wide, though, so it is expected that, when a fully implemented and improved version of the project is ready to be launched, those 15\% don't pose a limitation anymore. Apart from that fact, the advantage of developing the application for versions equal or superior to 4.0.3 is huge, because the API versions between \emph{Android} 3.0 and 4.0.3 introduced major improvements to the UI, text input and so on. 
 
@@ -135,7 +135,7 @@ There are a few cases where a navigation bar is placed in the bottom of the scre
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.4]{evernote.png}
+    \includegraphics[scale=0.5]{evernote.png}
     \caption{Example of an application with splitted Action Bar - Evernote. Note also the bottom bar, present in recent devices.}
     \label{fig:evernote}
   \end{center}
@@ -196,7 +196,7 @@ Two alternative designs were made, one with and one without the map with users i
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{profile1.png}
+    \includegraphics[scale=0.5]{profile1.png}
     \caption{Initial draft of the user profile screen - with network user map.}
     \label{fig:profile1}
   \end{center}
@@ -207,7 +207,7 @@ For the first possibility (the one with the user map), it was also considered th
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{profile2.png}
+    \includegraphics[scale=0.5]{profile2.png}
     \caption{Initial draft of the user profile screen - without network user map.}
     \label{fig:profile2}
   \end{center}
@@ -228,7 +228,7 @@ The difference between the two solutions is that one of them includes the aggreg
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{comment2.png}
+    \includegraphics[scale=0.5]{comment2.png}
     \caption{Initial draft of the comment, rate and news feed features - all-in-one.}
     \label{fig:comment2}
   \end{center}
@@ -237,7 +237,7 @@ The difference between the two solutions is that one of them includes the aggreg
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{comment1.png}
+    \includegraphics[scale=0.5]{comment1.png}
     \caption{Initial draft of the comment, rate and news feed features - news feed/rating aggregated, with comment in other tab.}
     \label{fig:comment1}
   \end{center}
@@ -258,7 +258,7 @@ The existing tab referring to the journey planner was maintained, adding one mor
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{planner1.png}
+    \includegraphics[scale=0.5]{planner1.png}
     \caption{Initial draft of the journey planner features - with tabs on the left, with spinners on the right.}
     \label{fig:planner1}
   \end{center}
@@ -268,15 +268,17 @@ The existing tab referring to the journey planner was maintained, adding one mor
 
 During this phase, in order to define and specify usability requirements, a focus group session was held at \emph{IBM-CAS} room at FEUP.
 
-Focus groups consist in an informal technique used to understand user needs and feelings. This technique can be used at any stage of the development phase, before the design phase or even after the implementation, with the goal of discussing issues and concerns about  the features of an user interface. 
+Focus groups consist in an informal technique used to understand user needs and feelings \cite{kn:KC08}. This technique can be used at any stage of the development phase, before the design phase or even after the implementation, with the goal of discussing issues and concerns about the features of an user interface. 
 
-These sessions usually bring together between six and nine users, typically lasting about two hours. A moderator should be assigned to the session, in order to maintain the group's focus \cite{kn: Nielsen07}. 
+These sessions usually bring together between six and nine users, typically lasting about two hours. A moderator should be assigned to the session, in order to maintain the group's focus \cite{kn: Nie97}. 
 
 In this case, the main goal for the session held was to understand what users needed, presenting them the alternatives mentioned on the previous section to discussion. Note that these kind of sessions are not intended to evaluate interface usability (because usually participants do not have the chance to use the product on their own, but instead a demo is presented to the whole group). In this particular case, it was intended to check if the application could solve some of the users' problems regarding public transport information, what could be done to improve that matter and changes regarding the interaction that could lead to that improvement.
 
-Six participants with different backgrounds, age groups and different patterns of public transport use were part of the session. In Table \ref{table:table1}, is it possible to see those characteristics in more detail.
+Six participants with different backgrounds, age groups and different patterns of public transport use were part of the session. In Table \ref{tab:table1}, is it possible to see those characteristics in more detail. \\ \\
 
-\begin{table}{t}
+
+
+\begin{table}[H]
 
 \begin{center}
 \begin{tabular}{ c c c c p{5cm} }
@@ -318,8 +320,8 @@ Even if the user desires to receive information about other journeys (if they do
 In short, the following problems were faced: 
 
 \begin{itemize}
-\item No possibility of checking the information before entering the vehicle - as the user had to check-in in a route and vehicle prior to  submit and, more importantly, to receive information. 
-\item No possibility of checking more than one route at a time - User only could receive information from the route where he was checked-in, and could only be checked-in at one route. 
+\item Impossibility of checking the information before entering the vehicle - as the user had to check-in in a route and vehicle prior to  submit and, more importantly, to receive information. 
+\item Impossibility of checking more than one route at a time - User only could receive information from the route where he was checked-in, and could only be checked-in at one route. 
 \end{itemize}
 
 If the possibility of receiving information for several trips was introduced, one of the suggestions was the possibility to filter which trip (or trips) the user wanted to see information from, in order to not get lost in the middle of a big volume of information. Taking the same example situation above (three possible routes between A and B), a user should be capable to, despite receiving information from the three routes, to hide one or other just to make the visualization of the information easier, showing it again whenever he wants to. 

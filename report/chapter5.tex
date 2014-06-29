@@ -8,12 +8,12 @@ This chapter covers in detail the development phase for the application, startin
 
 \subsection{Data Model}
 
-The data model for this application was initially the same conceived and referred in \cite{kn:Gonc12}. That said, it carries the same assumptions and limitations then assumed, such as the simplified network concept (where a network is not centred in the user, as desired for the future, but represents a single line and direction).
+The data model for this application was initially the same conceived and referred in \cite{kn:eSG12}. That said, it carries the same assumptions and limitations then assumed, such as the simplified network concept (where a network is not centred in the user, as desired for the future, but represents a single line and direction).
 Therefore, checking-in in a network represents sharing information with other users in the same line or direction, where it should represent sharing information with users performing trips in a set of routes, lines or directions with relevance to the pair origin-destination where the user checked-in.
 
 The same data model was refined in a second iteration of the project, aiming to give additional intelligence to the application, by calculating relevant routes for a given origin and destination. The relevant routes are calculated through inferring from past data from validations supplied by \emph{STCP}, and users in routes considered relevant are due to be added to the initial user temporary network (the same who provided the origin and destination used to perform that calculation) \cite{kn:Dia13}.
 
-The refined data model introduced another change: the usage of transport public data from the city of Porto, while the older one used data from \emph{Transports from London}(TFL), which were used in the tests performed in the field among users. 
+The refined data model introduced another change: the usage of transport public data from the city of Porto, while the older one used data from \emph{Transports for London}(TFL), which were used in the tests performed in the field among users. 
 
 In this work, some adaptations to this recent version of the data model were made, in order to allow some concept modifications. Those adaptations will be mentioned and explained in the following sections, along with the reasons that lead to them.
 
@@ -31,7 +31,7 @@ If the maintenance and refactoring of the code that made that rating feature wor
 
 \subsection{Webservice}
 
-The webservice connecting the existing database (as well as other data concerning the route relevance calculation) and the mobile application was also the same developed in \cite{kn:Gon12}.
+The webservice connecting the existing database (as well as other data concerning the route relevance calculation) and the mobile application was also the same developed in \cite{kn:eSG12}.
 
 Similar to what was said about the data model, it was made an effort to integrate, when possible, the existing webservice with the new application prototype. However, some concept and feature changes required changes to the webservice as well. Those changes will also be mentioned in the following sections, when explaining what lead to them.
 
@@ -40,14 +40,14 @@ Similar to what was said about the data model, it was made an effort to integrat
 \section{Interface Elements and Concepts}\label{interfacecon}
 
 This section will cover the evolution of the interface and interaction of the application during the design phase, as well as a detailed explanation about how the implementation of the designed interface was made.
-All the design guidelines and examples that were in the origin of design choices are also explained. However, it must be said that usability guidelines rarely consist in hard and fast rules, and usability questions frequently don't have just a single answer. In most cases, there are design trade-offs that must be considered \cite{kn:MobileUsab}.
+All the design guidelines and examples that were in the origin of design choices are also explained. However, it must be said that usability guidelines rarely consist in hard and fast rules, and usability questions frequently don't have just a single answer. In most cases, there are design trade-offs that must be considered \cite{kn:NB13}.
 
 \subsection{Branding}
 
 Despite being an application directed to the public, or intended to be in a near future, the attribution of a name or image associated to it was missing or yet to be discussed.
 
 
-In a discussion with Eng. António Nunes, the creator of the idea behind the project, some thoughts and suggestions about a possible name for the application came up. For this iteration of the project, one of them (proposed by him) was selected - Journata.
+In a discussion with Eng. António Nunes, the creator of the idea behind the project, some thoughts and suggestions about a possible name for the application came up. For this iteration of the project, one of them (proposed by him) was selected - \textbf{Journata}.
 
 This name was selected because in the opinion of the people involved in the project, it could give the user an initial perception about some of the application features - it can be considered a travel journal in some way - while performing a word play with the words "journey", "journal" and "data". Even the name itself, Journata, resembles the Italian and Portuguese words for "journey" - \emph{giornata} and \emph{jornada}, respectively.
 
@@ -56,7 +56,7 @@ Some thought was also put in creating a logo for the application. The main idea 
 \begin{figure}[htb]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.2]{logo_versions.png}
+    \includegraphics[scale=0.25]{logo_versions.png}
     \caption{Application first logo alternative designs.}
     \label{fig:logo}
   \end{center}
@@ -83,7 +83,7 @@ The design decision about the existence of text labels as an additional informat
 \begin{figure}[htb]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.6]{facebook1.png}
+    \includegraphics[scale=0.8]{facebook1.png}
     \caption{Screenshot of \emph{Facebook} application navigation component for \emph{Android}.}
     \label{fig:facebook1}
   \end{center}
@@ -99,7 +99,7 @@ A distinct example can be \emph{Swarm}. This recent application, from the creato
 \begin{figure}[htb]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.6]{swarm1.png}
+    \includegraphics[scale=0.8]{swarm1.png}
     \caption{Screenshot of \emph{Swarm} application navigation component for \emph{Android}.}
     \label{fig:swarm1}
   \end{center}
@@ -147,7 +147,7 @@ The \emph{Android} Action Bar was also used, despite not being part of any of th
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.8]{mainnav4.png}
+    \includegraphics[scale=0.7]{mainnav4.png}
     \caption{Screenshot of the implemented application's main navigation.}
     \label{fig:mainnav4}
   \end{center}
@@ -180,7 +180,7 @@ That way, if an user wanted to retrieve information between A and B, and three p
 \begin{figure}[htb]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.4]{feed_iter1_add.png}
+    \includegraphics[scale=0.45]{feed_iter1_add.png}
     \caption{News Feed features and screens - Add Feed, First Iteration.}
     \label{fig:feed_iter1_add}
   \end{center}
@@ -195,7 +195,7 @@ By clicking on an item of the list, representing a feed, a menu would also be av
 
 The 'filter visible feeds' feature was designed as a list where the users could mark each one of the current subscribed feeds as visible or invisible, through a check-box. However, it was considered that the use of a check-box to perform this selection was not efficient, because it was not clear enough to the user what were the practical effects of that selection and the actions triggered by it (figure \ref{fig:feed_iter1_filter}).
 
-\begin{figure}[htb]
+\begin{figure}[H]
   \begin{center}
     \leavevmode
     \includegraphics[scale=0.5]{feed_iter1_filter.png}
@@ -210,7 +210,7 @@ Viewing the news feed was considered the main and most critical feature of the a
 The first thoughts about this feature included what should be the information displayed to the user in each comment from a feed.
 Since this was no longer a feature associated to a single route or network, every item should have the indication of the network it refers to, consisting in origin, destination, transportation method and route number (this one is only valid if it refers to a bus route).
 
-In order to make this feature more attractive, and since between the fields available in a user profile, a photo was also considered in the initial work \cite{kn:Gon12}, an interface similar to the message display we encounter in several instant messaging or SMS sending applications for mobile devices (such as \emph{Google Hangouts}, \emph{Android} SMS application), where the user or contact photo is displayed near the content of his message.
+In order to make this feature more attractive, and since between the fields available in a user profile, a photo was also considered in the initial work \cite{kn:eSG12}, an interface similar to the message display we encounter in several instant messaging or SMS sending applications for mobile devices (such as \emph{Google Hangouts}, \emph{Android} SMS application), where the user or contact photo is displayed near the content of his message.
 
 In this case, and opposed to what was previously done, the appearance of the user's own messages along with messages from other users was conceived, in order to create that effect and to give the user a sense of contribution to the community of the users of the application, trying to improve their levels of engagement.
 
@@ -259,7 +259,7 @@ To the menu where it was possible to find the option to remove the feed from the
 
 The confirmation dialog for feed removal (or for any task at all) is considered as something to avoid when designing mobile applications. An interaction pattern that allowed to replace that sort of dialogs consists in removing the item, giving the user the option to undo the item removal for a few seconds. This pattern can be encountered in some \emph{Android} applications widely used, such as \emph{Gmail}. This interaction pattern was also considered for this feature, as it is possible to see in figure \ref{fig:feed_iter2_remove}.
 
-\begin{figure}[htb]
+\begin{figure}[H]
   \begin{center}
     \leavevmode
     \includegraphics[scale=0.5]{feed_iter2_remove.png}
@@ -277,13 +277,13 @@ One question that was not considered in the design phase was the transition betw
 \begin{figure}[!h]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.5]{login_register.png}
+    \includegraphics[scale=0.45]{feed1.png}
     \caption{Screenshots of the add and filter feed features.}
     \label{fig:feed1}
   \end{center}
 \end{figure}
 
-The form for adding a new feed used an improved version of the auto-complete used in \cite{kn:Gon12}. That was implemented in order to reduce the effort of text input from the user (it allows the user to select the desired bus stop right away). This form also allows the search to be performed without indicating one of the fields (origin or destination), providing all the possible options, something that was not possible in the previous application and that required changes to the existing API.
+The form for adding a new feed used an improved version of the auto-complete used in \cite{kn:eSG12}. That was implemented in order to reduce the effort of text input from the user (it allows the user to select the desired bus stop right away). This form also allows the search to be performed without indicating one of the fields (origin or destination), providing all the possible options, something that was not possible in the previous application and that required changes to the existing API.
 
 The list of retrieved results allows the selection of more than one result at a time, and therefore, saving the user from the effort of adding one feed at a time.
 While waiting for the results, a progress bar is shown to the user, in order to avoid showing an empty list and inform the user that some action is occurring in the background.
@@ -293,7 +293,7 @@ A feature that was not included in the previous design iterations was the possib
 \begin{figure}[!h]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.5]{login_register.png}
+    \includegraphics[scale=0.45]{feed2.png}
     \caption{Screenshots of the view feed feature (with refresh).}
     \label{fig:feed2}
   \end{center}
@@ -327,12 +327,12 @@ That said, minimizing the text input is the way to go when developing mobile app
 One of the most important guidelines for the development of mobile applications is to avoid making users pass through a registration screen as a starting point to use the application. 
 When a user starts using an application for the first time, he has a low level of commitment. Unless the application offers immense value to him, as quickly as possible, users won't use it enough to make registration worth their while. 
 
-Forcing users to register before they are sufficiently convinced of the value provided by the application will probably cause many of them to simply back out from it and never try it again, therefore losing the chance of causing a first impression \cite{kn: MobileUsab}.
+Forcing users to register before they are sufficiently convinced of the value provided by the application will probably cause many of them to simply back out from it and never try it again, therefore losing the chance of causing a first impression \cite{kn: NB12}.
 
 This guideline is not exactly new, as it is recommended since 1999 in e-commerce sites (a user should be able to buy items without having to register). Its importance, though, is greater in mobile applications, because every extra step that the user must pass through causes considerable effort, and users are less committed to an app they just downloaded than to a website where they have spent time browsing before being prompted to create an account.
 
 \begin{quote}
-"Registration on the first screen is an example of 'take before you give': Apps want users to spend time and effort without any perceived benefit. Asking for permission to send notifications of use the current location before users find out what the app is about is another way in which apps abuse their emerging relationship with the users. Often users have no idea of the purpose of those actions (...).' \cite{kn: MobileUsab}
+"Registration on the first screen is an example of 'take before you give': Apps want users to spend time and effort without any perceived benefit. Asking for permission to send notifications of use the current location before users find out what the app is about is another way in which apps abuse their emerging relationship with the users. Often users have no idea of the purpose of those actions (...).' \cite{kn: NB12}
 \end{quote}
 
 
@@ -346,7 +346,7 @@ For the remaining features, those that require being logged in, a screen informi
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.22]{profile_login.png}
+    \includegraphics[scale=0.45]{profile_login.png}
     \caption{User profile screen - an example where authentication is required in order to access the information.}
     \label{fig:auth1}
   \end{center}
@@ -357,7 +357,7 @@ In the login screen, a simple form asking for username and password is encounter
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.5]{login_register.png}
+    \includegraphics[scale=0.45]{login_register.png}
     \caption{Screenshots of the login and register screens.}
     \label{fig:auth2}
   \end{center}
@@ -374,15 +374,13 @@ The use of the \emph{Android} Action Bar as part of the interface allowed to cre
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{auth1.png}
+    \includegraphics[scale=0.5]{auth3.png}
     \caption{Login and logout buttons in the Action Bar.}
     \label{fig:auth3}
   \end{center}
 \end{figure}
 
 Another concern during the development was the persistence of data after pausing or exiting the application. In the implementation of the prototype, all the data regarding the user login and profile is stored locally, in order to be accessible when entering the application again, after pausing or closing it. That said, the application does not require the user to login again after the first utilization (unless, of course, the user logs out in order to use other account).
-
-\newpage
 
 \subsection{Comment Submission}\label{comment}
 
@@ -424,7 +422,7 @@ The spinner mentioned in the first iteration would then be replaced for the info
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.48]{comment_iter2_1.png}
+    \includegraphics[scale=0.5]{comment_iter2_1.png}
     \caption{Check-in and definition of route - Second Iteration.}
     \label{fig:comment_iter2_1}
   \end{center}
@@ -433,7 +431,7 @@ The spinner mentioned in the first iteration would then be replaced for the info
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.48]{comment_iter2_2.png}
+    \includegraphics[scale=0.5]{comment_iter2_2.png}
     \caption{Comment menu and classification dialog - Second Iteration.}
     \label{fig:comment_iter2_2}
   \end{center}
@@ -442,18 +440,20 @@ The spinner mentioned in the first iteration would then be replaced for the info
 \newpage
 \subsubsection{Implementation}
 
-The implementation of these features tried to follow as much as possible what was established in the second design iteration. The only difference to register is that the intermediate step, where the user defines the route where he's travelling, was not necessary because the current representation of a network included only a route and direction, and the only transportation method in the database is bus, there was only a choice to be made in that screen if it were implemented. For this prototype, it was decided not to.
+The implementation of these features tried to follow as much as possible what was established in the second design iteration (see Figure \ref{fig:comment_impl}). The only difference to register is that the intermediate step, where the user defines the route where he's travelling, was not necessary because the current representation of a network included only a route and direction, and the only transportation method in the database is bus, there was only a choice to be made in that screen if it were implemented. For this prototype, it was decided not to.
 
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{auth1.png}
+    \includegraphics[scale=0.45]{comment_impl.png}
     \caption{Screenshots of the implementation of check-in and comment submission features.}
     \label{fig:comment_impl}
   \end{center}
 \end{figure}
 
 The check-out feature was also implemented, and can be encountered in the menu available in the Action Bar. Performing the logout action while checked-in will also trigger the check-out action.
+
+\newpage
 
 \subsection{Journey Planner Features}\label{journeyplanner}
 
@@ -462,7 +462,7 @@ For this module, the suggestions given by users on the focus group session were 
 \begin{itemize}
 \item \textbf{Favourites} - User adds a feed subscription (through a similar workflow used to add a feed to the current subscriptions) to a list of his favourite feeds. In that list, user can easily activate any of those feeds through pressing a checkbox. This way, a user does not need to be constantly adding and removing the same feed subscription everytime he wants to receive information for a given journey that he happens to do with reasonable frequency.
 When a favourite feed is activated, is it automatically added to the current subscribed feeds (along with the others added on the 'Feed' module of the application).
-\item \textbf{Schedule} - Allows the user to see a list of journeys he planned for the future, with the associated date and time. The journey planner features that made part of the previous developed prototype \cite{kn:Gon12} were included here in order to be possible to add new plans to this schedule.
+\item \textbf{Schedule} - Allows the user to see a list of journeys he planned for the future, with the associated date and time. The journey planner features that made part of the previous developed prototype \cite{kn:eSG12} were included here in order to be possible to add new plans to this schedule.
 \end{itemize} 
 
 The journey planner, as it was initially conceived, was also intended to send notifications to the user ten minutes before a planned journey was scheduled to start, in order to ask to the user if he wanted to receive information from the corresponding network. 
@@ -495,6 +495,8 @@ About the introduction of text in the origin and destination fields, the same pr
   \end{center}
 \end{figure}
 
+\newpage
+
 \subsubsection{Implementation}
 
 The implementation followed what was established in the design phase. However, there were room for some changes, such as fixing the position of the buttons at the end of the lists (favourites and schedule) in order to be coherent with the implementation of the remaining modules and allow the user to perform the majority of the main application flow through the press of well-sized buttons at the bottom of the screen.
@@ -506,13 +508,11 @@ An external library was also used to help with the implementation of the date (w
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.5]{auth1.png}
+    \includegraphics[scale=0.45]{planner_impl.png}
     \caption{Screenshot of the implementation of the favourites and schedule lists.}
     \label{fig:planner_impl}
   \end{center}
 \end{figure}
-
-\newpage
 
 \subsection{User Profile}\label{userprofileimpl}
 
@@ -539,7 +539,7 @@ After that decision, there would be no changes at all to the interface designed 
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{profile_iter1.png}
+    \includegraphics[scale=0.5]{profile_iter1.png}
     \caption{User Profile screen - Design phase.}
     \label{fig:profile_iter1}
   \end{center}
@@ -552,7 +552,7 @@ The implementation phase for the user profile module followed the interface conc
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
-    \includegraphics[scale=0.45]{auth1.png}
+    \includegraphics[scale=0.45]{profile_impl.png}
     \caption{Screenshots of the implementation of user profile screen.}
     \label{fig:profile_impl}
   \end{center}

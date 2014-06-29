@@ -1,65 +1,77 @@
-\chapter{Focus Group} \label{ap1:focgr}
+\chapter{Focus Group Script} \label{ap1:focgr}
 
-Depois das conclusões e antes das referências bibliográficas,
-apresenta-se neste anexo numerado o texto usado para preencher a
-dissertação.
+\subsection{Goals}
 
-\section{O que é o \emph{Loren Ipsum}?}
+This \emph{Focus Group} intends to present some uses cases from the application, in order to elicit usability requirements for a future functional prototype of the said application.
+It is intended to promote a discussion which, recurring to suggestions of interface designs for some of the use cases, can serve as indication to the best way to proceed regarding the interaction of the application.
 
-\emph{\textbf{Lorem Ipsum}} is simply dummy text of the printing and
-typesetting industry. Lorem Ipsum has been the industry's standard
-dummy text ever since the 1500s, when an unknown printer took a galley
-of type and scrambled it to make a type specimen book. It has survived
-not only five centuries, but also the leap into electronic
-typesetting, remaining essentially unchanged. It was popularised in
-the 1960s with the release of Letraset sheets containing Lorem Ipsum
-passages, and more recently with desktop publishing software like
-Aldus PageMaker including versions of Lorem Ipsum~\citep{kn:Lip08}. 
+\subsection{Briefing to the participants}
 
-\section{De onde Vem o Loren?}
+A number increasingly higher of public transport passengers is connected everyday to social network platforms through the utilization of their personal mobile devices. This allows sharing of information between passengers in real time, regarding several aspects of the public transport service at a given moment.
+This kind of information can be useful both to the users, in order to help them take more informed decisions regarding their journeys, and the transport network managers, helping them to introduce improvements to the service.
+Regarding this last point, there can also be benefits to the public transport operators through the acquisition of operational information in a more timely manner and with less use of resources.
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It
-has roots in a piece of classical Latin literature from 45 BC, making
-it over 2000 years old. Richard McClintock, a Latin professor at
-Hampden-Sydney College in Virginia, looked up one of the more obscure
-Latin words, consectetur, from a Lorem Ipsum passage, and going
-through the cites of the word in classical literature, discovered the
-undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-1.10.33 of ``de Finibus Bonorum et Malorum'' (The Extremes of Good and
-Evil) by Cicero, written in 45 BC. This book is a treatise on the
-theory of ethics, very popular during the Renaissance. The first line
-of Lorem Ipsum, ``Lorem ipsum dolor sit amet\ldots'', comes from a line in
-section 1.10.32.
+However, the most used social networks are incapable of aggregating and distributing custom information to passengers and managers of public transport networks, leading to the existence of spread information with much less utility. Therefore, it is intended to develop a prototype of a mobile service based on the structure of a social network, but innovative in the way how users are connected between each other, temporarily, based on their location and travel patterns. 
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-below for those interested. Sections 1.10.32 and 1.10.33 from ``de
-Finibus Bonorum et Malorum'' by Cicero are also reproduced in their
-exact original form, accompanied by English versions from the 1914
-translation by H. Rackham.
+The developed prototype will be a new and more advanced version of other prototype previously developed, but with significant improvements in several aspects, such as usability and the capacity to establish temporary connections between passengers in an intelligent and real time manner.
 
-\section{Porque se usa o Loren?}
+\section{Use Cases to Discuss}
 
-It is a long established fact that a reader will be distracted by the
-readable content of a page when looking at its layout. The point of
-using Lorem Ipsum is that it has a more-or-less normal distribution of
-letters, as opposed to using ``Content here, content here'', making it
-look like readable English. Many desktop publishing packages and web
-page editors now use Lorem Ipsum as their default model text, and a
-search for ``lorem ipsum'' will uncover many web sites still in their
-infancy. Various versions have evolved over the years, sometimes by
-accident, sometimes on purpose (injected humour and the like). 
+\subsection{Journey Planner and Check-In}
 
-\section{Onde se Podem Encontrar Exemplos?}
+\begin{itemize}
+\item Check-in must have better visibility than in the previous prototype. In that prototype, the journey planner, despite referring to a probable check-in in a future journey, had more visibility than a journey intended to perform in the immediate present.
 
-There are many variations of passages of Lorem Ipsum available, but
-the majority have suffered alteration in some form, by injected
-humour, or randomised words which don't look even slightly
-believable. If you are going to use a passage of Lorem Ipsum, you need
-to be sure there isn't anything embarrassing hidden in the middle of
-text. All the Lorem Ipsum generators on the Internet tend to repeat
-predefined chunks as necessary, making this the first true generator
-on the Internet. It uses a dictionary of over 200 Latin words,
-combined with a handful of model sentence structures, to generate
-Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is
-therefore always free from repetition, injected humour, or
-non-characteristic words etc. 
+\item It is impossible to verify is the user has several trips planned (it is not possible to list all the previously planned journeys), which brings up a difficulty if the user had planned more than one trip to perform in the future. The implementation of such feature has benefit?
+\end{itemize}
+
+\subsection{User Profile}
+
+Displays information about the user profile in the application. Suggestions for data to display in this screen are:
+
+\begin{itemize}
+
+\item User Name
+\item Photo/Avatar of the user.
+\item Map with user location (and possibly users in the same network).
+\item Information about vehicle or route where the user currently is.
+\item Menu to access other features.
+\item Access button to visibility/privacy options.
+
+\end{itemize}
+
+Regarding this use case, other questions that may be relevant of discussion:
+
+\begin{itemize}
+\item Is the user profile screen the best to display to the user when entering the application (instead of, for instance, travel information)?
+\item Access to other features should be made from this screen or should the other feature be accessible on other 'tabs' from the application or through a swipe gesture?
+\item Is this the right screen to display points and stars from the user?
+\end{itemize}
+
+\subsection{Trip information}
+
+Regarding this use case, the following points must be considered:
+
+\begin{itemize}
+\item \textbf{Information displaying mode} - Should be implemented, for instance, under the form of a 'newsfeed' or there is a better way to do it? The task of 'rating' the information should be in another 'tab', to give visibility to that feature, or done recurring to buttons appearing in the news feed along with the information?
+
+\item \textbf{Easiness of information submission} - The user must have minimum effort to submit new information. This means that the interface for quantitative rating of information should be as  clear as possible (with properly sized buttons or through sliders). The qualitative information submission (written comments) should also minimize text input effort from the user.
+
+\item \textbf{Presentation of the types of information to submit} - Previous division by category (such as the previous prototype)? All types of information in the same page/screen (scrolling requires less effort than going back and choosing other category, despite the fact that the items in the end of the list become less visible)?
+\end{itemize}
+
+\section{Other questions to discuss regarding other features or interactions}
+
+\begin{itemize}
+\item \textbf{\emph{Early Registration}} - Eliminating early registration in the application, giving the user features that do not allow login or check-in in a network to access information could lead to less 'abandon rate' when first using the application.
+However, it could lead to a vast number of users not creating an account to share information.
+
+\item How relevant to the users is the possibility to see other users in their temporary network?
+
+\item It would be interesting to provide users with the history of their trips and submitted comments?
+
+\item \textbf{Notifications} - Sending a notification to the user when he enters a network or has a planned journey in the next 10 minutes is excessive?
+
+\end{itemize}
+
+
