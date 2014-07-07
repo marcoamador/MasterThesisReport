@@ -40,7 +40,7 @@ Similar to what was said about the data model, an effort was made to integrate, 
 \section{Interface Elements and Concepts}\label{interfacecon}
 
 This section will cover the evolution of the interface and interaction of the application during the design phase, as well as a detailed explanation about how the implementation of the designed interface was made.
-All the design guidelines and examples that were in the origin of design choices are also explained. However, it must be said that usability guidelines rarely consist in hard and fast rules, and usability questions frequently don't have just a single answer. In most cases, there are design trade-offs that must be considered \cite{kn:NB13}.
+All the design guidelines and examples that were in the origin of design choices are also explained. However, it must be said that usability guidelines rarely consist in hard and fast rules, and usability questions frequently don't have just a single answer. In most cases, there are design trade-offs that must be considered \cite{kn:NB12}.
 
 \subsection{Branding}
 
@@ -80,7 +80,7 @@ Those tabs were meant to represent:
 \item Journey Planner
 \end{itemize}
 
-The design decision about the existence of text labels as an additional information (along with suggestive icons) was made in order to make the learnability of the interface easier. There are several well-known mobile applications who use tabs as their main navigation component, and social networks are no exception. In figure \ref{fig:facebook1}, it is possible to see a screenshot of the \emph{Facebook} application for \emph{Android}. 
+The design decision about the existence of text labels as an additional information (along with suggestive icons) was made in order to make the learnability of the interface easier. There are several well-known mobile applications who use tabs as their main navigation component, and social networks are no exception. In Figure \ref{fig:facebook1}, it is possible to see a screenshot of the \emph{Facebook} application for \emph{Android}. 
 
 \begin{figure}[htb]
   \begin{center}
@@ -153,6 +153,8 @@ The \emph{Android} Action Bar was also used, despite not being part of any of th
     \label{fig:mainnav4}
   \end{center}
 \end{figure}
+
+The accessibility and readability of the texts and buttons was also considered, in order to properly size the items encountered in this navigation.
 
 \subsection{News Feed}\label{newsfeed}
 
@@ -264,9 +266,9 @@ The confirmation dialog for feed removal (or for any task at all) is considered 
   \end{center}
 \end{figure} 
 
-The implementation of this module of the application tried to follow as much as possible the design from the second iteration. Several screens for situations where no information was available were designed and implemented (for when the user does not have any feeds subscribed, prompting him to do so in order to benefit from the usage of the application. This was done following the principles for feedback referred on Dan Saffer's \emph{Microinteractions}\cite{kn:Saf13}).
+The implementation of this module of the application tried to follow as much as possible the design from the second iteration. Several screens for situations where no information was available were designed and implemented (for when the user does not have any feeds subscribed, prompting him to do so in order to benefit from the usage of the application. This was done following the principles for feedback referred on Dan Saffer's \emph{Microinteractions}\cite{kn:Saf13}). The readability and accessibility of the text and buttons displayed in the interface were also considered. High contrast colors (white on black and white on blue) were used, along with properly sized buttons to simplify the interaction with the application and to avoid user errors. This was also applied in the remaining modules of the application.
 
-One question that was not considered in the design phase was the transition between the 'View Feed' feature and the other features in this component, that had navigation between them through the utilization of a secondary navigation. For that matter, a new tab was added to that secondary navigation, in order to allow that transition and make it as easy as possible to the user (through the touch on the desired feature tab/button).
+One question that was not considered in the design phase was the transition between the 'View Feed' feature and the other features in this component, that had navigation between them through the utilization of a secondary navigation. For that matter, a new tab was added to that secondary navigation, in order to allow that transition and make it as easy as possible to the user (through the touch on the desired feature tab/button) - Figure \ref{fig:feed1}.
 
 \begin{figure}[!h]
   \begin{center}
@@ -282,7 +284,7 @@ The form for adding a new feed used an improved version of the auto-complete use
 The list of retrieved results allows the selection of more than one result at a time, and therefore, saving the user from the effort of adding one feed at a time.
 While waiting for the results, a progress bar is shown to the user, in order to avoid showing an empty list and inform the user that some action is occurring in the background.
 
-A feature that was not included in the previous design iterations was the possibility of refreshing the news feed. This feature is available scrolling (pulling) the list of comments to the bottom of the screen. This feature was implemented with the use of the external library \emph{Simple-Pull-To-Refresh}\footnote{\url{https://github.com/JoeDailey/Android-Simple-Pull-to-Refresh}}. The implementation of this interaction pattern has become pretty common in applications where the user usually needs to fetch new information being displayed to him, such as an e-mail inbox, a news feed and so on. For instance, a similar implementation is part of the \emph{Gmail} application for \emph{Android}, as well as many social applications such as \emph{Facebook} and \emph{Foursquare}. 
+A feature that was not included in the previous design iterations was the possibility of refreshing the news feed. This feature is available scrolling (pulling) the list of comments to the bottom of the screen (see Figure \ref{fig:feed2}). This feature was implemented with the use of the external library \emph{Simple-Pull-To-Refresh}\footnote{\url{https://github.com/JoeDailey/Android-Simple-Pull-to-Refresh}}. The implementation of this interaction pattern has become pretty common in applications where the user usually needs to fetch new information being displayed to him, such as an e-mail inbox, a news feed and so on. For instance, a similar implementation is part of the \emph{Gmail} application for \emph{Android}, as well as many social applications such as \emph{Facebook} and \emph{Foursquare}. 
 
 \begin{figure}[!h]
   \begin{center}
@@ -441,8 +443,6 @@ The implementation of these features tried to follow as much as possible what wa
 
 The check-out feature was also implemented, and can be encountered in the menu available in the Action Bar. Performing the logout action while checked-in will also trigger the check-out action.
 
-\newpage
-
 \subsection{Journey Planner Features}\label{journeyplanner}
 
 For this module, the suggestions given by users on the focus group session were crucial to the definition of the following features:
@@ -497,6 +497,7 @@ An external library was also used to help with the implementation of the date (w
   \end{center}
 \end{figure}
 
+\newpage
 \subsection{User Profile}\label{userprofileimpl}
 
 After the focus group and the fears shown by the users regarding seeing other users in the same network and having his own data (despite limited) possibly visible to other users, it was decided to change the information displayed in the user profile screen to match some of the suggestions given in that session, such as user statistics, along with some of the initially predicted information to be displayed:
