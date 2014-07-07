@@ -9,13 +9,13 @@ This chapter covers in detail the development phase for the application, startin
 \subsection{Data Model}
 
 The data model for this application was initially the same conceived and referred in \cite{kn:eSG12}. That said, it carries the same assumptions and limitations then assumed, such as the simplified network concept (where a network is not centred in the user, as desired for the future, but represents a single line and direction).
-Therefore, checking-in in a network represents sharing information with other users in the same line or direction, where it should represent sharing information with users performing trips in a set of routes, lines or directions with relevance to the pair origin-destination where the user checked-in.
+Therefore, checking-in in a network represents sharing information with other users in the same line or direction, while it should represent sharing information with users performing trips in a set of routes, lines or directions with relevance to the origin-destination pair where the user checked-in.
 
-The same data model was refined in a second iteration of the project, aiming to give additional intelligence to the application, by calculating relevant routes for a given origin and destination. The relevant routes are calculated through inferring from past data from validations supplied by \emph{STCP}, and users in routes considered relevant are due to be added to the initial user temporary network (the same who provided the origin and destination used to perform that calculation) \cite{kn:Dia13}.
+The original data model was refined in a second iteration of the project, aiming to give additional intelligence to the application, by calculating relevant routes for a given origin and destination. The relevant routes are calculated through inference on past data from validations supplied by \emph{STCP}, and users in routes considered relevant are added to the initial user temporary network (the same who provided the origin and destination used to perform that calculation) \cite{kn:Dia13}.
 
-The refined data model introduced another change: the usage of transport public data from the city of Porto, while the older one used data from \emph{Transports for London}(TFL), which were used in the tests performed in the field among users. 
+The refined data model introduced another change: the usage of transport public data from the city of Porto, while the older one used data from \emph{Transport for London}(TFL), which were used in the tests performed in the field among users. 
 
-In this work, some adaptations to this recent version of the data model were made, in order to allow some concept modifications. Those adaptations will be mentioned and explained in the following sections, along with the reasons that lead to them.
+In this work, some adaptations to this second version of the data model were made, in order to allow some concept modifications. Those adaptations will be mentioned and explained in the following sections, along with the reasons that lead to them.
 
 \subsection{Android Application}
 
@@ -33,7 +33,7 @@ If the maintenance and refactoring of the code that made that rating feature wor
 
 The webservice connecting the existing database (as well as other data concerning the route relevance calculation) and the mobile application was also the same developed in \cite{kn:eSG12}.
 
-Similar to what was said about the data model, it was made an effort to integrate, when possible, the existing webservice with the new application prototype. However, some concept and feature changes required changes to the webservice as well. Those changes will also be mentioned in the following sections, when explaining what lead to them.
+Similar to what was said about the data model, an effort was made to integrate, when possible, the existing webservice with the new application prototype. However, some concept and feature modifications required changes to the webservice as well. Those modifications will also be mentioned in the following sections.
 
 \clearpage
 
@@ -44,14 +44,16 @@ All the design guidelines and examples that were in the origin of design choices
 
 \subsection{Branding}
 
-Despite being an application directed to the public, or intended to be in a near future, the attribution of a name or image associated to it was missing or yet to be discussed.
+Despite being an application directed to the public, or intended to be in a near future, the creation of a name or image associated to it was missing or yet to be discussed.
 
 
-In a discussion with Eng. António Nunes, the creator of the idea behind the project, some thoughts and suggestions about a possible name for the application came up. For this iteration of the project, one of them (proposed by him) was selected - \textbf{Journata}.
+After some discussion, a possible name for the application came up - \textbf{Journata}.
 
 This name was selected because in the opinion of the people involved in the project, it could give the user an initial perception about some of the application features - it can be considered a travel journal in some way - while performing a word play with the words "journey", "journal" and "data". Even the name itself, Journata, resembles the Italian and Portuguese words for "journey" - \emph{giornata} and \emph{jornada}, respectively.
 
-Some thought was also put in creating a logo for the application. The main idea was to resemble a public transport vehicle (bus or subway), while giving a modern look to the referred vehicle and to the logo itself. In the following figure, it is possible to find the designed alternatives for a first logo of the application. 
+Some thought was also put in creating a logo for the application. The main idea was to resemble a public transport vehicle (bus or subway), while giving a modern look to the referred vehicle and to the logo itself. One of the lines which create the mentioned vehicle shape also forms the letter J, representing the initial letter from the chosen name.
+
+In figure \ref{fig:logo}, it is possible to see the alternatives for a first logo of the application. 
 
 \begin{figure}[htb]
   \begin{center}
@@ -67,7 +69,7 @@ The middle option was then selected to be part of the prototype.
 
 \subsection{Main Navigation}
 
-After the realization of a focus group session (see section \ref{focusgroup}), the design choice had fallen over a tab navigation, consisting in four tabs, always visible.
+After a focus group session (see section \ref{focusgroup}), the design choice had fallen over a tab navigation, consisting in four tabs, always visible.
 
 Those tabs were meant to represent:
 
@@ -78,7 +80,7 @@ Those tabs were meant to represent:
 \item Journey Planner
 \end{itemize}
 
-The design decision about the existence of text labels as an additional information (along with suggestive icons) was made in order to make the learnability of the interface easier. There are several well-known mobile applications who use tabs as their main navigation component, and social networks are no exception. In the following figure, it is possible to see a screenshot of the \emph{Facebook} application for \emph{Android}. 
+The design decision about the existence of text labels as an additional information (along with suggestive icons) was made in order to make the learnability of the interface easier. There are several well-known mobile applications who use tabs as their main navigation component, and social networks are no exception. In figure \ref{fig:facebook1}, it is possible to see a screenshot of the \emph{Facebook} application for \emph{Android}. 
 
 \begin{figure}[htb]
   \begin{center}
@@ -92,7 +94,7 @@ The design decision about the existence of text labels as an additional informat
 Here, it is possible to see that the chosen navigation does not have text labels with additional information about the features they refer (in some cases, textual information about the feature can be seen in the Action Bar, though). However, in this case it is considered acceptable, since \emph{Facebook} users know the displayed icons very well and associate actions and meaning to them, since the same icons are displayed in the \emph{Facebook} website for years and users know pretty well what the actions associated to them (preserved in the mobile application).
 
 
-A distinct example can be \emph{Swarm}. This recent application, from the creators of \emph{Foursquare}, has a tab-based navigation as well, but because users are not yet familiar with the features associated to those icons, there is an initial difficulty in the application learning process.
+A distinct example can be \emph{Swarm} (see Figure \ref{fig:swarm1}). This recent application, from the creators of \emph{Foursquare}, has a tab-based navigation as well, but because users are not yet familiar with the features associated to those icons, there is an initial difficulty in the application learning process.
 
 \clearpage
 
@@ -107,7 +109,7 @@ A distinct example can be \emph{Swarm}. This recent application, from the creato
 
 
 
-Other reason to provide textual information labels along the icons is the widespread usage of those labels in \emph{iOS} applications, where tab navigation is fairly common, despite being in the bottom of the screen.
+Another reason to provide textual information labels along the icons is the widespread usage of those labels in \emph{iOS} applications, where tab navigation is fairly common, despite being displayed at the bottom of the screen (see Figure \ref{fig:ios-tabs}).
 
 \begin{figure}[h!]
   \begin{center}
@@ -119,12 +121,12 @@ Other reason to provide textual information labels along the icons is the widesp
 \end{figure}
 
 
-\subsubsection{Iterations}
+%\subsubsection{Iterations}
 
 One of the first decisions after the focus group was to re-order those tabs by perceived importance. The information in user profile was perceived as less important than the journey planner features (or at least it is intended that the journey planner features have more visibility). To accomplish that, the journey planner tab was then moved to third place (from left to right), switching its place with the user profile tab.
 
 The label associated to the journey planner tab was also changed in order to inform the user that that tab included some more features but not just the planner, such as a list of favourite and scheduled trips.
-It is possible to see the result of that decision in figure \ref{fig:mainnav3}.
+It is possible to see the result of that decision in Figure \ref{fig:mainnav3}.
 
 
 \begin{figure}[h!]
@@ -138,11 +140,10 @@ It is possible to see the result of that decision in figure \ref{fig:mainnav3}.
 
 This new version of the interface was not changed until the end of the design phase, when it was the subject of an usability test along with the remaining components of the interface(see Appendix \ref{ap2:usabtest}) and consequently validated.
 
-\subsubsection{Implementation}
-
+%\subsubsection{Implementation}
 In the implementation of this component, an external library (ViewPagerIndicator \footnote{\url{http://viewpagerindicator.com/}}) was used and customized in order to facilitate the integration of swipe gestures to alternate between tabs. This way, a more fluid interaction was made available to the user.
 
-The \emph{Android} Action Bar was also used, despite not being part of any of the interface design, to include elements such as the application name, logo and an option menu with features missing in the design iterations.
+The \emph{Android} Action Bar was also used, despite not being part of any of the interface design, to include elements such as the application name, logo and an option menu with features missing in the design iterations (Figure \ref{fig:mainnav4}).
 
 \begin{figure}[h!]
   \begin{center}
@@ -157,14 +158,13 @@ The \emph{Android} Action Bar was also used, despite not being part of any of th
 
 After the performed focus group, one of the suggestions consisted in the introduction of feed subscriptions. The user could receive information from several networks (instead of just one, as previously established), subscribing an information feed of each network for that matter. 
 
-\subsubsection{First Iteration}
-
+%\subsubsection{First Iteration}
 An initial thought on that suggestion resulted in considering the possibility of having several check-ins at the same time. The first design iteration after the realization of the focus group was aligned with this idea. Subscribing a network feed (the act of adding the subscription) therefore implied the check-in of the user in the same network. 
 
 Four new features were then considered: 
 
 \begin{itemize}
-\item Add a new feed subscription (previously there was no need to add, since the network were the user was checked-in was the one whose information was displayed);
+\item Add a new feed subscription (previously there was no need to add, since the network where the user was checked-in was the one whose information was displayed);
 \item Listing the current feed subscriptions;
 \item Removing a feed subscription;
 \item Filter visible feed subscriptions (the 'view feed' feature would display a 'global feed', with all the feeds subscribed. With this filtering, the user could mark one or more feeds to be invisible in the 'global feed').
@@ -175,7 +175,7 @@ The need for the existence of a secondary navigation (similar to what was discus
 To subscribe a new feed, the user would indicate the origin and the destination of the network from which he desired to retrieve information (the origin or destination could be based on the user's GPS location, searching the nearest stops), as well as the date and hour for the information. 
 Then, the user would retrieve a list with several options, listing all the vehicles and methods of transportation available at the supplied date and hour. To make the list item selection easier, a button to select/deselect all the options would be available as well.
 
-That way, if an user wanted to retrieve information between A and B, and three possible transportation methods/vehicles are available, the user would need to select all the three of them in order to get information from all those lines and perform an informed decision (see figure \ref{fig:feed_iter1_add}).
+That way, if an user wanted to retrieve information between A and B, and three possible transportation methods/vehicles are available, the user would need to select all the three of them in order to get information from all those lines and perform an informed decision (see Figure \ref{fig:feed_iter1_add}).
 
 \begin{figure}[htb]
   \begin{center}
@@ -193,7 +193,7 @@ However, this design had several limitations. For example, the user usually has 
 This would also bring an additional problem - along with adding a feed subscription for every transportation method for the chosen course, the same was required for removing those feeds.
 By clicking on an item of the list, representing a feed, a menu would also be available to the user, allowing him to remove a feed. When an item was selected to removal, a confirm dialog would be presented to the user. However, this is considered as something to avoid when designing mobile applications because of the additional effort presented to the user (additional interaction).
 
-The 'filter visible feeds' feature was designed as a list where the users could mark each one of the current subscribed feeds as visible or invisible, through a check-box. However, it was considered that the use of a check-box to perform this selection was not efficient, because it was not clear enough to the user what were the practical effects of that selection and the actions triggered by it (figure \ref{fig:feed_iter1_filter}).
+The 'filter visible feeds' feature was designed as a list where the users could mark each one of the current subscribed feeds as visible or invisible, through a check-box. However, it was considered that the use of a check-box to perform this selection was not efficient, because it was not clear enough to the user what were the practical effects of that selection and the actions triggered by it (Figure \ref{fig:feed_iter1_filter}).
 
 \begin{figure}[H]
   \begin{center}
@@ -219,7 +219,7 @@ A different highlight color for the user's own comments was also selected, in or
 Each item would also have the option to give a star to the comment author, if the comment in question was considered particularly helpful. 
 
 
-As said before, it was decided to aggregate the comment feature in the view feed screen, and the initial thought in how to do that was to highlight the items with pending user review in the top on the feed, despite possibly being older than some of the already approved comments. Those comments would also have a button that, when triggered, would prompt a dialog to the user making it possible to define and submit the rating about the referred comment (figure \ref{fig:feed_iter1_view}).
+As said before, it was decided to aggregate the comment feature in the view feed screen, and the initial thought in how to do that was to highlight the items with pending user review in the top on the feed, despite possibly being older than some of the already approved comments. Those comments would also have a button that, when triggered, would prompt a dialog to the user making it possible to define and submit the rating about the referred comment (Figure \ref{fig:feed_iter1_view}).
 
 \begin{figure}[htb]
   \begin{center}
@@ -230,11 +230,7 @@ As said before, it was decided to aggregate the comment feature in the view feed
   \end{center}
 \end{figure}
 
-
-
-
-\subsubsection{Second Iteration}
-
+%\subsubsection{Second Iteration}
 Recognising the existing limitations in the first design iteration,  a second iteration was made, based in the assumption that subscribing a network feed would be independent from check-in. This way, the existence of a check-in was not required to receive information. The need for defining date and hour when adding a new feed subscription was also eliminated.
 
 However, the most relevant change for this new iteration was the aggregation of the feeds for several transportation methods in just one. According to this new paradigm, if the user wants to receive information between a given point A and another given point B, he would only need to subscribe one feed, defining the origin as A and the destination as B. The subscribed feed would then include all the information of all the possible routes to go from A to B, as well as other relevant routes (integrating this concept with the work developed in \cite{kn:Dia13}), independently from the transportation method. 
@@ -242,7 +238,7 @@ However, the most relevant change for this new iteration was the aggregation of 
 This way, for the previously given example, where the user has three distinct routes or options to go from A to B, the same user would subscribe an unique feed that would allow him to retrieve information from all of the three options.
 
 The screen for adding a new feed subscription was also redesigned, having now an additional button allowing to switch the content of the text fields of origin and destination (an interaction pattern encountered on other mobile applications that present the input of similar data to the user, such as \emph{Google Maps} or \emph{Moovit}).
-Several alternatives for that screen, intended to highlight and at the same time facilitate the option for choosing the current location of the user as origin or destination, were also designed (figure \ref{fig:feed_iter2_add}).
+Several alternatives for that screen, intended to highlight and at the same time facilitate the option for choosing the current location of the user as origin or destination, were also designed (Figure \ref{fig:feed_iter2_add}).
 
 \begin{figure}[!h]
   \begin{center}
@@ -257,7 +253,7 @@ Several alternatives for that screen, intended to highlight and at the same time
 Regarding the filter feeds feature, the check-box from the first iteration was replace by a switch with textual information about the feed status/action associated to it.
 To the menu where it was possible to find the option to remove the feed from the list of subscribed feeds, the option to add the same feed to the list of favourites (see section \ref{journeyplanner}) was also added. 
 
-The confirmation dialog for feed removal (or for any task at all) is considered as something to avoid when designing mobile applications. An interaction pattern that allowed to replace that sort of dialogs consists in removing the item, giving the user the option to undo the item removal for a few seconds. This pattern can be encountered in some \emph{Android} applications widely used, such as \emph{Gmail}. This interaction pattern was also considered for this feature, as it is possible to see in figure \ref{fig:feed_iter2_remove}.
+The confirmation dialog for feed removal (or for any task at all) is considered as something to avoid when designing mobile applications. An interaction pattern that allowed to replace that sort of dialogs consists in removing the item, giving the user the option to undo the item removal for a few seconds. This pattern can be encountered in some \emph{Android} applications widely used, such as \emph{Gmail}. This interaction pattern was also considered for this feature, as it is possible to see in Figure \ref{fig:feed_iter2_remove}.
 
 \begin{figure}[H]
   \begin{center}
@@ -266,11 +262,9 @@ The confirmation dialog for feed removal (or for any task at all) is considered 
     \caption{News Feed features and screens - Filter and Remove Feed, Second Iteration.}
     \label{fig:feed_iter2_remove}
   \end{center}
-\end{figure}
+\end{figure} 
 
-\subsubsection{Implementation} 
-
-The implementation of this module of the application tried to follow as much as possible the design from the second iteration. Several screens for situations where no information was available were designed and implemented (for when the user does not have any feeds subscribed, prompting him to do so in order to benefit from the usage of the application. This was done following the principles for feedback referred on Dan Saffer's \emph{Microinteractions}\cite{kn:Saffer}).
+The implementation of this module of the application tried to follow as much as possible the design from the second iteration. Several screens for situations where no information was available were designed and implemented (for when the user does not have any feeds subscribed, prompting him to do so in order to benefit from the usage of the application. This was done following the principles for feedback referred on Dan Saffer's \emph{Microinteractions}\cite{kn:Saf13}).
 
 One question that was not considered in the design phase was the transition between the 'View Feed' feature and the other features in this component, that had navigation between them through the utilization of a secondary navigation. For that matter, a new tab was added to that secondary navigation, in order to allow that transition and make it as easy as possible to the user (through the touch on the desired feature tab/button).
 
@@ -304,15 +298,13 @@ Note that each comment has two buttons next to it, instead of the star that was 
 
 \subsubsection{Point System Redesign}\label{points}
 
-The limitations identified in section \ref{rateinitial}, alongside with the deprecation of \emph{Google Cloud to Device Messaging Framework}, that was beneath the previous existing rating system, led to the development of a whole new (and simpler) rating system, consisting in giving a 'thumbs up' or 'thumbs down' to a comment. Each 'thumbs up' adds one point to the score of the comment in question, while a 'thumbs down' subtracts one point from that score. That comment score is called 'feedback', and comments with negative feedback score are hidden from the news feed of other users. 
+The limitations identified in section \ref{rateinitial}, alongside with the deprecation of \emph{Google Cloud to Device Messaging Framework}, that was beneath the previous existing rating system, led to the development of a whole new (and simpler) rating system, consisting in giving a 'thumbs up' or 'thumbs down' to a comment. Each 'thumbs up' adds one point to the score of the comment in question, while a 'thumbs down' subtracts one point from that score. That comment score is called 'feedback', and comments with negative feedback score are hidden from the news feed of other users. While allowing the 'thumbs down' button to serve as a tool to report unreliable comments, the existence of the 'thumbs up' button provides a way to reward other users in case they have submitted a valuable comment, promoting a healthy competition to have more positive feedback than others and, consequently, to submit more reliable information. 
 
 This also lead to a creation of a new field in the data structure referring to the user data: feedback points, which is the sum of the feedback score of all of the user's comments. Due to the creation of the feedback points, it was also decided to eliminate the 'stars' that could be given to a very useful comment.
 
 Those two buttons that can be encountered to the right of the displayed comments in figure \ref{fig:feed2}, with the shape of an arrow, represent the 'thumbs up' and 'thumbs down' actions.
 
 In order to display the network feed information, additional changes to the API were made. The existing implementation required an existing login and check-in in order to retrieve the set of information from a network, retrieving only the information for the network where the user was checked-in. Changes to that 'request' method had to be made in order to retrieve data from any network without those limitations.
-
-However, a problem that was not possible to overcome in a timely manner was that the existing data structure for representing the networks did not allow to fetch the origin and destination of those networks in the feed, despite what has been discussed in the design phase. The only useful information that can help the user identifying the network the information refers to is the number of the bus route (the current data set used only bus stops and routes from the city of Porto). This is expected to be corrected in a near future.
 
 \subsection{Authentication}\label{authentication}
 
@@ -327,12 +319,12 @@ That said, minimizing the text input is the way to go when developing mobile app
 One of the most important guidelines for the development of mobile applications is to avoid making users pass through a registration screen as a starting point to use the application. 
 When a user starts using an application for the first time, he has a low level of commitment. Unless the application offers immense value to him, as quickly as possible, users won't use it enough to make registration worth their while. 
 
-Forcing users to register before they are sufficiently convinced of the value provided by the application will probably cause many of them to simply back out from it and never try it again, therefore losing the chance of causing a first impression \cite{kn: NB12}.
+Forcing users to register before they are sufficiently convinced of the value provided by the application will probably cause many of them to simply back out from it and never try it again, therefore losing the chance of causing a first impression \cite{kn:NB12}.
 
 This guideline is not exactly new, as it is recommended since 1999 in e-commerce sites (a user should be able to buy items without having to register). Its importance, though, is greater in mobile applications, because every extra step that the user must pass through causes considerable effort, and users are less committed to an app they just downloaded than to a website where they have spent time browsing before being prompted to create an account.
 
 \begin{quote}
-"Registration on the first screen is an example of 'take before you give': Apps want users to spend time and effort without any perceived benefit. Asking for permission to send notifications of use the current location before users find out what the app is about is another way in which apps abuse their emerging relationship with the users. Often users have no idea of the purpose of those actions (...).' \cite{kn: NB12}
+"Registration on the first screen is an example of 'take before you give': Apps want users to spend time and effort without any perceived benefit. Asking for permission to send notifications of use the current location before users find out what the app is about is another way in which apps abuse their emerging relationship with the users. Often users have no idea of the purpose of those actions (...)." \cite{kn:NB12}
 \end{quote}
 
 
@@ -341,7 +333,7 @@ In the scope of this application, it was decided that the elimination of registr
 The chosen features, given that the decoupling of the check-in requirement in order to receive network information was performed (as referred in section \ref{newsfeed}), were the ones related with the news feed component. That included adding new feeds, filter the information about the received feeds and to see the news feed information. 
 Those features represent, for users that don't want to contribute with comments to the platform, a way to still receive the information they desire, possibly motivating them to contribute in the future if they wish to do it.
 
-For the remaining features, those that require being logged in, a screen informing them to do so, along with a visible button that redirects them to the login screen, appears if they are not logged in yet. 
+For the remaining features, those that require being logged in, a screen informing them to do so, along with a visible button that redirects them to the login screen, appears if they are not logged in yet (see Figure \ref{fig:auth1}). 
 
 \begin{figure}[h!]
   \begin{center}
@@ -352,7 +344,7 @@ For the remaining features, those that require being logged in, a screen informi
   \end{center}
 \end{figure}
 
-In the login screen, a simple form asking for username and password is encountered, as well as the submit button for that form, and a button at the bottom of the screen that redirects the user for the register screen.
+In the login screen (Figure \ref{fig:auth2}), a simple form asking for username and password is encountered, as well as the submit button for that form, and a button at the bottom of the screen that redirects the user for the register screen.
 
 \begin{figure}[h!]
   \begin{center}
@@ -369,7 +361,7 @@ Regarding the privacy setting, there is no need to define it so soon and introdu
 
 The submission of the registration form also triggers a login process after a successful registration. In short, after registering a new account, the user does not need to login and enter their data again, contrasting to what happened in the application developed in the previous iteration of the project.
 
-The use of the \emph{Android} Action Bar as part of the interface allowed to create another options for logging in and logging out of the application, through the creation of an action menu where we can find login and logout buttons.
+The use of the \emph{Android} Action Bar as part of the interface allowed to create another options for logging in and logging out of the application, through the creation of an action menu where we can find login and logout buttons (Figure \ref{fig:auth3}).
 
 \begin{figure}[h!]
   \begin{center}
@@ -395,10 +387,9 @@ The main interaction flow conceived was the following:
 \item A dialog would be presented to the user, containing the several aspects the user can classify inside the chosen category. For each item, a slider with several possible values and a submit button is available, so that the user can submit his feedback for every value individually. The selected value, for the selected aspect, is then converted in a textual comment that will be submitted to the network's news feed. The choice for a dialog, despite not being exactly a good usability guideline, went through because it would allow the users to easily dismiss the dialog and change for another comment category, saving them the effort of navigating for a different screen and then go back if they wished to comment on an aspect from a different category.
 \end{itemize}
 
-\subsubsection{First Iteration}
 
 As mentioned before, the first design iteration after the focus group assumed that several simultaneous check-ins from the same user were possible. For that matter, after the first step of performing the check-in, the user would need to choose what was, from within the several simultaneous check-ins, the network where he is in the current moment, in order to submit information to that network.
-This was meant to be done in the main comment menu. A spinner would present to the user all the existing check-ins, from where he would need to choose the right one (figure \ref{fig:comment_iter1}).
+This was meant to be done in the main comment menu. A spinner would present to the user all the existing check-ins, from where he would need to choose the right one (Figure \ref{fig:comment_iter1}).
 
 \begin{figure}[h!]
   \begin{center}
@@ -411,13 +402,11 @@ This was meant to be done in the main comment menu. A spinner would present to t
 
 The chosen method to submit a written comment was to have a text field, along with a submit button, in the main comment menu, so that the task of entering and submitting that type of comment would require as little time as possible.
 
-\newpage
 
-\subsubsection{Second Iteration}
 
 Having simultaneous check-ins posed yet another problem, and this one related with the comment submission. If the user could choose a network from his checked-in networks to mark as the 'current one', and submit information to that network, there would be no guarantee that the user is currently performing that journey, existing the possibility to him to submit information for all the networks he wants. This was another reason that led to the regression (at least in what concerns to comment submission) to a 'single check-in' system.
 
-The spinner mentioned in the first iteration would then be replaced for the information about the network (origin, destination, transportation method and route, when applicable). This would also require the creation of an intermediate screen between the check-in and the comment menu, where the user selects the transportation method and route where he's travelling, because the revised concept of network for this second iteration implies the network includes any option and route between the selected origin and destination, but the information about the vehicle route will be relevant for users seeing the submitted comments in their feeds.
+The spinner mentioned in the first iteration would then be replaced for the information about the network (origin, destination, transportation method and route, when applicable). This would also require the creation of an intermediate screen between the check-in and the comment menu, where the user selects the transportation method and route where he's travelling, because the revised concept of network for this second iteration implies the network includes any option and route between the selected origin and destination, but the information about the vehicle route will be relevant for users seeing the submitted comments in their feeds (Figures \ref{fig:comment_iter2_1} and \ref{fig:comment_iter2_2}).
 
 \begin{figure}[h!]
   \begin{center}
@@ -438,7 +427,6 @@ The spinner mentioned in the first iteration would then be replaced for the info
 \end{figure}
 
 \newpage
-\subsubsection{Implementation}
 
 The implementation of these features tried to follow as much as possible what was established in the second design iteration (see Figure \ref{fig:comment_impl}). The only difference to register is that the intermediate step, where the user defines the route where he's travelling, was not necessary because the current representation of a network included only a route and direction, and the only transportation method in the database is bus, there was only a choice to be made in that screen if it were implemented. For this prototype, it was decided not to.
 
@@ -469,9 +457,8 @@ The journey planner, as it was initially conceived, was also intended to send no
 
 With the deprecation of \emph{Google Cloud to Device Messaging Framework}, these notifications were eliminated, and the idea was to automatically add the feed subscription for the network referring the planned journey to the list of current feed subscriptions, activating that feed as a default. That action would be triggered 30 minutes before the planned start time for the journey, so that the user can receive some information beforehand about what is happening in the network, and it would be automatically deactivated one hour and a half later (it could also be manually deactivated as well).
 
-\subsubsection{Iterations}
 
-The difference between the two main design iterations happened in the screen where the used could plan a new journey (in other words, add a new journey to the schedule).
+The difference between the two main design iterations (Figures \ref{fig:planner_iter1} and \ref{fig:planner_iter2}) happened in the screen where the used could plan a new journey (in other words, add a new journey to the schedule).
 
 \begin{figure}[h!]
   \begin{center}
@@ -482,7 +469,7 @@ The difference between the two main design iterations happened in the screen whe
   \end{center}
 \end{figure}
 
-For the second iteration, it was decided not to limit the selection of the date of a planned journey to a single day, and to allow planning of repetitive tasks (very similar to what is allowed in alarm applications), selecting the days of the week when the user plans to do the journey.
+For the second iteration (Figure \ref{fig:planner_iter2}), it was decided not to limit the selection of the date of a planned journey to a single day, and to allow planning of repetitive tasks (very similar to what is allowed in alarm applications), selecting the days of the week when the user plans to do the journey.
 
 About the introduction of text in the origin and destination fields, the same principles applied in similar tasks in the application were also applied here, with the existence of auto-complete and the button to switch the origin and destination fields content.
 
@@ -497,13 +484,9 @@ About the introduction of text in the origin and destination fields, the same pr
 
 \newpage
 
-\subsubsection{Implementation}
-
-The implementation followed what was established in the design phase. However, there were room for some changes, such as fixing the position of the buttons at the end of the lists (favourites and schedule) in order to be coherent with the implementation of the remaining modules and allow the user to perform the majority of the main application flow through the press of well-sized buttons at the bottom of the screen.
+The implementation followed what was established in the design phase. However, there were room for some changes, such as fixing the position of the buttons at the end of the lists (favourites and schedule) in order to be coherent with the implementation of the remaining modules and allow the user to perform the majority of the main application flow through the press of well-sized buttons at the bottom of the screen (Figure \ref{fig:planner_impl}).
 
 An external library was also used to help with the implementation of the date (with repetitive tasks) and time 'pickers' for the journey planner, \emph{DateTimePicker}\footnote{\url{https://github.com/flavienlaurent/datetimepicker}}, that contained the attractive widget for those type of tasks that is also possible to find in the most recent versions of \emph{Google Calendar} application.
-
-\newpage
 
 \begin{figure}[h!]
   \begin{center}
@@ -529,12 +512,12 @@ The additional information selected, apart from user statistics, was:
 \begin{itemize}
 \item List of available rewards (claimed with points).
 \item User photo (with the option to upload a new one).
-\item Option to change privacy settings (changing the visibility of username and photo).
+\item Option to change privacy settings (changing the visibility of username and photo). This allows the user to hide his photo and real username from other users if desired (for instance, when other users see comments submitted by a user along with his name and photo). If this privacy option is set as private, the user photo must be replaced by a predefined avatar (that can possibly be part of a set of avatars from which the user chooses one), and the username should be replaced with a generated one (for example, \emph{User12019} or \emph{Willy84928}).
 \end{itemize}
 
 In a first draft, it was also considered the inclusion of a check-out button in this screen, but that option was discarded because it was believed that it made little sense to have that option in this tab due to low visibility to the user.
 
-After that decision, there would be no changes at all to the interface designed as a first iteration.
+After that decision, there would be no changes at all to the interface designed as a first iteration (Figure \ref{fig:profile_iter1}).
 
 \begin{figure}[h!]
   \begin{center}
@@ -544,8 +527,6 @@ After that decision, there would be no changes at all to the interface designed 
     \label{fig:profile_iter1}
   \end{center}
 \end{figure}
-
-\subsubsection{Implementation}
 
 The implementation phase for the user profile module followed the interface conceived in the design phase. However, due to the reformulation in the points system (see section \ref{points}), the information about the stars given to the user was replaced by the information about his feedback points.
 
@@ -558,5 +539,5 @@ The implementation phase for the user profile module followed the interface conc
   \end{center}
 \end{figure}
 
-The privacy settings feature was also moved to the \emph{Android} Action Bar, giving his place in the screen to a button that allows the user to see his statistics.
+The privacy settings feature was also moved to the \emph{Android} Action Bar, giving his place in the screen to a button that allows the user to see his statistics (Figure \ref{fig:profile_impl}).
 

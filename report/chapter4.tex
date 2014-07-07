@@ -10,7 +10,7 @@ In the last section, the referred redesign, consisting in several alternative so
 
 \section{Previous work}
 
-As said before, the initial work on this project encompassed the initial implementation of the concept referred on \cite{kn: NGeCP11}, including a first prototype of an \emph{Android} mobile application. This prototype was made using \emph{Android} API level 8, being compatible with mobile devices running at least version 2.2 of the operative system.
+As said before, the initial work on this project encompassed the initial implementation of the concept referred on \cite{kn:NGeCP11}, including a first prototype of an \emph{Android} mobile application. This prototype was made using \emph{Android} API level 8, being compatible with mobile devices running at least version 2.2 of the operative system.
 
 This prototype had the following set of features \cite{kn:eSG12}
 
@@ -29,11 +29,11 @@ This prototype had the following set of features \cite{kn:eSG12}
 A more detailed explanation of those features, introducing some of the interaction flow of the prototype, is the following:
 
 \begin{enumerate}
-\item User launched the application, being prompted to login or to register a new account if he had not created one yet. If the user does not have an account, he has to register and then he is guided to the login screen.
+\item User launches the application, being prompted to login or to register a new account if he had not created one yet. If the user does not have an account, he has to register and is guided to the login screen.
 
-\item User had the possibility to check-in on a vehicle by two methods: manual insertion of the public transport stop names (origin and destination), or by GPS, where the user location was used in order to fetch the nearest stops, marking a chosen one as the origin, and choosing the destination from one of the given possibilities, thus marking the journey is making at that given moment.
+\item User has the possibility to check-in on a vehicle by two methods: manual insertion of the public transport stop names (origin and destination), or by GPS, where the user location is used in order to fetch the nearest stops, marking a chosen one as the origin, and choosing the destination from one of the given possibilities, thus marking the journey is making at that given moment.
 
-\item While checked-in (\emph{and only then}) the user could perform actions like submit a new comment for the selected journey (that could be written text comment, to a maximum of 150 characters, or a predefined categorised comment, rating aspects of the vehicle, which was converted to text afterwards), check a news feed with comments from other users made for the same journey, and rate the correctness of comments from other users.
+\item While checked-in (\emph{and only then}) the user could perform actions like submit a new comment for the selected journey (that could be written text comment, to a maximum of 150 characters, or a predefined categorised comment, rating aspects of the vehicle or driver, which was converted to text afterwards), check a news feed with comments from other users made for the same journey, and rate the correctness of comments from other users.
 
 \item User could also perform check-out, in order to mark the end of the journey.
 
@@ -43,7 +43,7 @@ A more detailed explanation of those features, introducing some of the interacti
  
 \end{enumerate}
 
-The developed prototype was the subject of a test in the field, performed in London with real bus users. A certain number of tasks, exploring all the features above mentioned, were given to the users, in order to measure the average execution time of each task.
+The developed prototype was the subject of a test in the field, performed in London with real bus users. A certain number of tasks, exploring all the features above mentioned, were given to the users, in order to measure the average execution time of each task \cite{kn:NGG13}.
 
 Despite the obtained results (average times for task completion were considered positive), there were tasks that could or should have better accomplishment times, given their importance in the whole user experience and utility.
 For instance, planning a journey takes more than 80 seconds, on average (despite being referred that happens due to a bug in a auto-complete feature), but there are a lot more features taking more than 30 seconds on average to be accomplished (check-in in, whether through the manual method or using GPS location, and rating a comment from other user). 
@@ -61,7 +61,7 @@ Still, no visual element whatsoever gives the user the information that the cont
 There was another task with average accomplishment time exceeding 30 seconds - submitting a written comment - though it's fair to assume that most of that time consists in writing the desired comment, and it is not necessarily tied to a disadvantage of the interface.
 
 Another measurement taken was a quantitative value (from one to five) representing the appraisal of a given task, concerning its difficulty, so that one represents a very difficult task to execute, and five represents an easy task.
-Here, the tasks that could have had better results were related to the notification system (informing a user that he has a planned journey soon, asking if he wants to receive information from it and check-in), as well as rating other users comments. 
+Here, the tasks that could have had better results were related to the notification system (informing a user that he has a planned journey soon, asking if he wants to receive information from it and check-in), as well as rating other users comments (Figure \ref{fig:rate_tab}). 
 
 This last concept was perceived as difficult to grasp, suggesting that improvement on this feature or the whole comment validation system, in order to provide more reliable feedback to public transport operators, can and should be made.
 The less positive appraisal from the rating comment task could also be associated with the fact that this feature has his own tab (the main navigation is composed by tabs), thus getting less visibility when comparing to other tabs (news feed or comment tab, for instance). 
@@ -83,7 +83,7 @@ All these questions and conclusions led to the development of a initial interfac
 
 \section{Initial Proposals}\label{sec:initial}
 
-After the initial process of perceiving what was done before, as well as understanding what were the advantages and disadvantages of the previous design decisions, and what went well and could go better, there was a group of decisions to be made concerning what the next steps would be. Those decisions consisted of:
+After the initial process of perceiving what was done before, as well as understanding what were the advantages and disadvantages of the previous design decisions, and what went well and could go better, there were five groups of research questions to be answered in order to proceed with the next steps. Those questions were:
 
 \begin{itemize}
 \item Technology - Despite being still on a premature phase, what technology would be used in order to develop the functional prototype? In this case, since that prototype is expected to be an \emph{Android} application, what would be the versions targeted for the prototype?
@@ -104,7 +104,7 @@ The main decision was between sticking with a target version of \emph{Android} 2
 
 Despite the fact that the users of \emph{Android} versions inferior to 4.0.3 represent about 15\% of total \emph{Android} users, that number will surely reduce with the emergence of newer versions and devices. The 'time to market' of the application is expected to be wide, though, so it is expected that, when a fully implemented and improved version of the project is ready to be launched, those 15\% don't pose a limitation anymore. Apart from that fact, the advantage of developing the application for versions equal or superior to 4.0.3 is huge, because the API versions between \emph{Android} 3.0 and 4.0.3 introduced major improvements to the UI, text input and so on. 
 
-Another important feature of this version is the Action Bar, used in the majority of \emph{Android} applications in order to serve as the main navigation menu of those applications, and that could be used as well in this project. The Action Bar menu came as a replacement for the Context Menu in older versions of \emph{Android}.
+Another important feature of this version is the Action Bar, used in the majority of \emph{Android} applications in order to serve as the main navigation menu of those applications, and that could be used as well in this project. The Action Bar menu came as a replacement for the Context Menu in older versions of \emph{Android} (see Figure \ref{fig:action}).
 
 \clearpage
 
@@ -127,7 +127,7 @@ About the main application navigation, the initial decision was to stick with a 
 \item \emph{Screen position} - Top or bottom. Because we're talking about an \emph{Android} application, the best position would be top of the screen, since the recent versions of \emph{Android}, because of the already mentioned attempts to eliminate physical buttons on the devices, now has a bar on the bottom which has three buttons - \textbf{Back}, \textbf{Home} and \textbf{Recents} (this last one showing recently opened applications.
 
 To put the tab navigation component could lead to user mistakes (touching the mentioned bar instead of the tab navigation). A tab navigation component in the bottom of the screen is, however, pretty common in \emph{iOS} mobile applications. 
-There are a few cases where a navigation bar is placed in the bottom of the screen on \emph{Android}. For instance, when using the Action Bar for navigation, if there are a wide number of options that is desired to show to the user, it is possible to split the Action Bar, having the (usual) top one and another bar at the bottom. 
+There are a few cases where a navigation bar is placed in the bottom of the screen on \emph{Android}. For instance, when using the Action Bar for navigation, if there are a wide number of options that is desired to show to the user, it is possible to split the Action Bar, having the (usual) top one and another bar at the bottom (Figure \ref{fig:evernote}). 
 
 
 \end{itemize}
@@ -153,7 +153,7 @@ Metaphors that users associate with well-defined actions, pages, features or con
 In this case, the icon for the user profile tab as a house, usually associated with the existence of an Home screen or page. However, what was considered the 'Home tab' was in fact the user profile and not the start point of the application, and this issue could lead to errors or confusions from the user point of view.
 \end{itemize}
 
-Considering these points, two alternative designs were conceived for this component, all with four tabs - one with only three tabs visible at a given moment (the selected one should have a visible indicator in order to inform the user from that status), with no icons and just text labels \ref{fig:tabs1}; one with four fixed tabs (all visible), containing both icons and text labels \ref{fig:tabs2}. A slight variation of this one was also designed - with the addition of a coloured circle indicator to show the number of new items on the news feed list \ref{fig:tabs3}.
+Considering these points, two alternative designs were conceived for this component (meant to be discussed on a focus group session), all with four tabs - one with only three tabs visible at a given moment (the selected one should have a visible indicator in order to inform the user from that status), with no icons and just text labels (Figure \ref{fig:tabs1}); one with four fixed tabs (all visible), containing both icons and text labels (Figure \ref{fig:tabs2}). A slight variation of this one was also designed - with the addition of a coloured circle indicator to show the number of new items on the news feed list (Figure \ref{fig:tabs3}).
 
 \begin{figure}[h!]
   \begin{center}
@@ -190,7 +190,7 @@ An additional button was also available, meant to fetch possible rewards that us
 
 After an initial brainstorming session, there were several ideas about what sort of information could be displayed - user photo/avatar, a map of users in the same temporary network of the user (users who could contribute to the news feed that the user is receiving), information about the line and vehicle the user is in and a check-out button.
 
-Two alternative designs were made, one with and one without the map with users in the same network. Since these initial designs were meant to act as a tool to wider the discussion on a focus group to be made (section \ref{sec:focusgroup}), the goal was to see if the users appreciated the idea of seeing other users (and their points) in the application, and if they were open to see their profile checked-out by other user (even if using the feature that allows to hide the real nickname).
+Two alternative designs were made, one with (Figure \ref{fig:profile1}) and one without the map with users in the same network (Figure \ref{fig:profile2}). Since these initial designs were meant to act as a tool to wider the discussion on a focus group to be made (section \ref{focusgroup}), the goal was to see if the users appreciated the idea of seeing other users (and their points) in the application, and if they were open to see their profile checked-out by other user (even if using the feature that allows to hide the real nickname).
 
 
 \begin{figure}[h!]
@@ -202,8 +202,6 @@ Two alternative designs were made, one with and one without the map with users i
   \end{center}
 \end{figure}
 
-For the first possibility (the one with the user map), it was also considered that a touch on a user on the map could display a dialog with a short profile of that user (username, points, stars and photo/avatar). That could, however, bring some usability difficulties due to the size of the elements that would represent a user on the map and would probably too small for this type of devices, where the touch gestures generally have low precision.
-
 \begin{figure}[h!]
   \begin{center}
     \leavevmode
@@ -212,6 +210,8 @@ For the first possibility (the one with the user map), it was also considered th
     \label{fig:profile2}
   \end{center}
 \end{figure}
+
+For the first possibility (the one with the user map), it was also considered that a touch on a user on the map could display a dialog with a short profile of that user (username, points, stars and photo/avatar). That could, however, bring some usability difficulties due to the size of the elements that would represent a user on the map and would probably too small for this type of devices, where the touch gestures generally have low precision.
 
 \subsection{Comment, Rate and News Feed}\label{rateinitial}
 
@@ -223,7 +223,10 @@ Two problems emerge from this system: first, there is the risk of an insufficien
 The conceived solutions encompassed the aggregation of the rating feature with the news feed, with the 'must-rate' comments from other users appearing with a visual highlight (another background color, for example).
 Both of those solutions involved as well showing the users' own comments in the news feed, aligned to the other side of the screen and also with a different background color to the message, resembling the behaviours usually seen in instant messaging or chat applications, that were since then applied to SMS applications on mobile devices.
 
-The difference between the two solutions is that one of them includes the aggregation of the comment features in the news feed tab as well (joining the comment, rate and news feed features all-in-one), while the other maintains two distinct tabs, one for news feed and rating and another one for submitting a comment.
+The difference between the two solutions is that one of them includes the aggregation of the comment features in the news feed tab as well (joining the comment, rate and news feed features all-in-one) - Figure \ref{fig:comment2} - while the other maintains two distinct tabs, one for news feed and rating and another one for submitting a comment - Figure \ref{fig:comment1}. 
+Both these solutions were also conceived with the realization of a focus group session in mind, in order to promote the discussion about these features and the interaction associated with them.
+
+\clearpage
 
 \begin{figure}[h!]
   \begin{center}
@@ -250,10 +253,9 @@ The previous iteration of the project included a journey planner feature, that c
 This feature has some importance in the application concept, because it may allow the system, in the future, to collect data related to the user trip profile, in order to predict, suggest and inform him about trips performed in a regular basis.
 
 However, despite that possibility of planning a trip, after introducing that plan in the application, the user could not see the introduced plans. This was probably conceived this way to allow a user to plan just one trip for the next hour or so, but if a user wants to plan several trips for one day or week, there is no possibility of checking those trips, putting on the user all the effort to remind them.
-
 Thus, a schedule feature was conceived, in order to give users that possibility, with the goal of catching their interest about the journey planner features.
 
-The existing tab referring to the journey planner was maintained, adding one more screen to that tab (the schedule feature). That included the need for a secondary navigation that would allow the user to choose either the planner or the schedule tab. The considered solutions were a second set of tabs, or a spinner where the user could select the desired option.
+The existing tab referring to the journey planner was maintained, adding one more screen to that tab (the schedule feature). That included the need for a secondary navigation that would allow the user to choose either the planner or the schedule tab. The considered solutions were a second set of tabs, or a spinner where the user could select the desired option (see Figure \ref{fig:planner1}). These solutions would also be presented at a focus group session (section \ref{focusgroup}) for discussion.
 
 \begin{figure}[h!]
   \begin{center}
@@ -270,7 +272,7 @@ During this phase, in order to define and specify usability requirements, a focu
 
 Focus groups consist in an informal technique used to understand user needs and feelings \cite{kn:KC08}. This technique can be used at any stage of the development phase, before the design phase or even after the implementation, with the goal of discussing issues and concerns about the features of an user interface. 
 
-These sessions usually bring together between six and nine users, typically lasting about two hours. A moderator should be assigned to the session, in order to maintain the group's focus \cite{kn: Nie97}. 
+These sessions usually bring together between six and nine users, typically lasting about two hours. A moderator should be assigned to the session, in order to maintain the group's focus \cite{kn:Nie97}. 
 
 In this case, the main goal for the session held was to understand what users needed, presenting them the alternatives mentioned on the previous section to discussion. Note that these kind of sessions are not intended to evaluate interface usability (because usually participants do not have the chance to use the product on their own, but instead a demo is presented to the whole group). In this particular case, it was intended to check if the application could solve some of the users' problems regarding public transport information, what could be done to improve that matter and changes regarding the interaction that could lead to that improvement.
 
@@ -286,19 +288,19 @@ Six participants with different backgrounds, age groups and different patterns o
   \hline 
   \textbf{\#} & \textbf{Gender} & \textbf{Age Group} & \textbf{Public transport usage profile} & \textbf{Background} \\
   \hline 
-  1 & Male & 18-30 & Frequent subway user & Public transport related Msc. thesis
+  1 & Male & 18-25 & Frequent subway user & Public transport related Msc. thesis
    student \\
   \hline
-  2 & Female & 18-30 & Occasional bus and subway user & HCI related Msc. thesis student \\
+  2 & Female & 18-25 & Occasional bus and subway user & HCI related Msc. thesis student \\
   \hline
   3 & Male & 40-60 & Occasional bus and subway user & 20+ years experience with public transport
   network studies (customer satisfaction
    and scheduling) \\ 
   \hline
-  4 & Male & 18-30 & Frequent bus and subway user & Msc. Student in Services Engineering
+  4 & Male & 18-25 & Frequent bus and subway user & Msc. Student in Services Engineering
    and Management\\
   \hline
-  5 & Male & 30-40 & Occasional bus and subway user & PhD. Researcher in public transport
+  5 & Male & 25-40 & Occasional bus and subway user & PhD. Researcher in public transport
    networks field\\
   \hline
   6 & Female & 40-60 & Occasional bus and subway user & PhD. in Operations Research\\
@@ -311,7 +313,7 @@ Six participants with different backgrounds, age groups and different patterns o
 
 As expected, a lot of ideas came up from the session. However, the ideas and discussions pointed in a way where a major redesign or rethinking about the application concept was needed.
 
-For instance, assume that a user wanted to perform a journey between a given point, A, and another given point, B. To go from A to B, several options, transportation methods and routes. In the way the concepts behind the application were currently designed, there was no way that the user could use it in order to make a informed decision about his trip. 
+For instance, assume that a user wanted to perform a journey between a given point, A, and another given point, B. To go from A to B, there are several options, transportation methods and routes. In the way the concepts behind the application were currently designed, there was no way that the user could use it in order to make a informed decision about his trip. 
 
 If there are three possibilities to go from A to B, two being distinct bus routes and one being subway, it is useful to the user to check if there is some problem regarding one  or two of these routes (delay, traffic jam, accident and so on) and possibly change the option he would take, saving him time and trouble by giving him the information to perform that informed decision.
 
@@ -326,13 +328,13 @@ In short, the following problems were faced:
 
 If the possibility of receiving information for several trips was introduced, one of the suggestions was the possibility to filter which trip (or trips) the user wanted to see information from, in order to not get lost in the middle of a big volume of information. Taking the same example situation above (three possible routes between A and B), a user should be capable to, despite receiving information from the three routes, to hide one or other just to make the visualization of the information easier, showing it again whenever he wants to. 
 
-The discussed solutions referring user profile information resulted in the conclusion that the users don't feel comfortable seeing the other users in their temporary network, because that would imply their information would be accessible to other users as well. 
+The discussed solutions referring user profile information (Figures \ref{fig:profile1} and \ref{fig:profile2}) resulted in the conclusion that the users do not feel comfortable seeing the other users in their temporary network, because that would imply their information would be accessible to other users as well. 
 
 Instead, they valued the existence of a record with the user journeys and user statistics about some of the aspects of their journey profile.
 
-All users recognised value in the existence of the schedule feature, and suggested as well the existence of favourite trips, that could easily be added to the trips from which the user desires to receive information.
+All users recognised value in the existence of the schedule feature (Figure \ref{fig:planner1}), and suggested as well the existence of favourite trips, which could easily be added to the trips the user desires to receive information from.
 
-About the interactions proposed, the main navigation composed by tabs with icons and labels was considered a good way to go. The feedback about the secondary navigation was mixed, but the secondary set of tabs (for journey planner) was considered easier to learn, because the user does not have to open the spinner widget to see all the available options in the secondary navigation.
+About the interactions proposed, the main navigation composed by tabs with icons and labels (Figure \ref{fig:tabs2} and \ref{fig:tabs3}) was considered a good way to go. The feedback about the secondary navigation was mixed, but the secondary set of tabs (for journey planner) was considered easier to learn, because the user does not have to open the spinner widget to see all the available options in the secondary navigation.
 
 Some others conclusions pointed to the importance of the rewards given to the users, to improve user engagement with the application, and that the trip aspects that the users value the most are related with security and service quality.
 

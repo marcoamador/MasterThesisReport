@@ -11,11 +11,11 @@ It also aimed to gather some conclusions on perspectives to the evolution of the
 The work performed during the design phase, as established in Chapter \ref{chap:chap5}, led to deep changes regarding the application features, navigation and the concepts behind the application. To validate those concepts before the implementation phase, it was decided to perform an usability test.
 
 
-During one week, some people were asked to use a low-level prototype and try to accomplish a predefined set of tasks, and give their feedback about the application and their possible difficulties in grasping the concepts behind it, in a controlled environment.
+During the course of one week, some people were asked to spend one hour in order to use a low-level prototype, try to accomplish a predefined set of tasks, and give their feedback about the application and their possible difficulties in grasping the concepts behind it, in a controlled environment.
 
 To guide users during this test, a script was presented to them (see Appendix \ref{ap2:usabtest}). This script was divided in two parts, a first one presenting a set of specific tasks to be accomplished through navigation and a second one where some questions to collect feedback about certain aspects were asked to the testers.
 
-Following Jakob Nielsen's recommendation for qualitative user research \cite{kn:NB12}, this test was presented to 6 subjects, with the majority of them being different from those who were in the focus group session previously made.
+Following Jakob Nielsen's recommendation for qualitative user research \cite{kn:NB13}, this test was presented to 6 subjects, with the majority of them being different from those who were in the focus group session previously made.
 
 All of them are frequent public transport users and reside in the Porto Metropolitan Area, have a smartphone and have ages comprehended within 18 and 25 years old. It was attempted to have a equal gender distributed sample , but that was not achieved in a timely manner. The sample ended up having 67 percent male subjects and 33 percent female subjects.
 
@@ -77,7 +77,7 @@ Despite that, several usability and interaction problems were detected during th
 \begin{itemize}
 \item When the user initially enters the application, an information that he has no feeds subscribed is displayed. However, and in contrary to what happens in other modules of the application, there is no button in the bottom of the screen redirecting the user to that feature, causing some confusion on the user regarding the existence of a trigger on clicking the displayed information text or leading him to explore other features inside the module and wasting unnecessary time in navigation.
 
-\item Regarding the comment submission module, some messages displayed to the user had the wrong information, and others did not make the process of user checking-in on a network before comment submission explicit enough. Despite not having great influence in the user perception of the feature, it does not give him the perception that he is checked-in and he can perform check-out. This is amplified by the fact that the access to the checkout feature is hidden on the Action Bar.
+\item Regarding the comment submission module, some messages displayed to the user had the wrong information, and others did not make the process of user checking-in on a network before comment submission explicit enough. Despite not having great influence in the user perception of the feature, it does not give the user the perception of being checked-in and able to check-out. This is amplified by the fact that the access to the checkout feature is hidden on the Action Bar.
 One suggestion to solve this problem is to take advantage of the existing free space on the main comment menu and add a button allowing the user to perform check-out.
 
 \item The position of the text field to submit a written comment is causing the \emph{Android} keyboard to hide its content, forcing the user to write his comment 'blindly'.
@@ -97,7 +97,9 @@ One suggestion to solve this problem is to take advantage of the existing free s
 \item More thought should be put on the location of the favourites and scheduled list. Since they are now the centerpiece and moved the journey planner to the background (as a method to use those features, and not as the feature itself), and since they are related with feed subscription (it is essentially a list of favourite feeds and a feed subscription scheduler), perhaps they would be better located if they were in the 'feed' module, but that would also imply having too many features concentrated in that navigation tab.
 \end{itemize}
 
-Concerning difficulties from the users in grasping the concepts behind the application, it was recognized by the experts that one of the more important and difficult questions raised by the application resides in the way to identify the specific vehicle where the users who comment are travelling, in order that the user receiving information can understand what vehicle is mentioned in the comments (this gains even more importance in high frequency routes or services).
+Concerning difficulties from the users in grasping the concepts behind the application, it was recognized by the experts that one of the more important and difficult questions raised by the application resides in the way to identify the specific vehicle where the users who comment are travelling, in order that the user receiving information can understand what vehicle is mentioned in the comments (this gains even more importance in high frequency routes or services). This difficulty, however, would not present itself if an automatic check-in on a vehicle was possible (for instance, through interaction of the smartphone with the validator device inside a vehicle). 
+
+
 About the feed subscription concept, a recommendation was given in order to simplify it and limit the feed to courses with monomodal transportation and without changing routes/lines. That would represent the majority of the journeys and facilitate the understanding of the concept for a big number of users. The remaining ones would need to add several feeds instead of one, depending on their course. This would also make the user have less course alternatives and receive less (and possibly more relevant) information when performing long multi-modal journeys.
 
 The new rating system was appreciated by its simplicity (and the several limitations of the previous system were also recognized and discussed). Some possible future improvements of the new system were also suggested, such as the implementation of point rewards for 'thumbs-up' or 'thumbs-down', since the users are performing the comment validation for the platform, and also that the understanding of those actions should be clarified, in order to represent more like an agreement with the submitted comment and less like a 'like/dislike'. This way, a user would be lead towards not submitting a comment with the same information that was already submitted (because that would award him points) and less redundant and more reliable information would be produced.
@@ -111,12 +113,12 @@ The following suggestions were also given by the experts (some of them were the 
 
 Currently, if the user wishes to submit a comment about several aspects, submitting them individually, other user who wants to check the network feed information would have to scroll to see information submitted by other users because he would see several items in the feed referring to those several submissions, when he could be seeing just one item (that he could click to see in detail).
 
-\item Swipe gesture should not only navigate between tabs from the primary navigation, but also the secondary one. For instance, if the user is in the 'View Feed' screen, a swipe to the left should lead him to the 'Select Feeds' screen, and not to the 'Comment' tab. Only if the user is on the 'Receive New Feed' (the last one on the secondary navigation for the first tab) and performs the same gesture should he be led to the 'Comment' tab.
+\item Swipe gesture should not only allow the navigation between tabs from the primary navigation, but also from the secondary one. For instance, if the user is in the 'View Feed' screen, a swipe to the left should lead him to the 'Select Feeds' screen, and not to the 'Comment' tab. Only when the user is on the 'Receive New Feed' (the last one on the secondary navigation for the first tab) and performs the same gesture should he be led to the 'Comment' tab.
 \end{itemize}
 
 To conclude this section, two additional observations during the tests were registered by the author:
 
 \begin{itemize}
 \item Despite having the possibility to navigate between tabs by using swipe gestures, users almost always used the click on the desired tab to navigate.
-\item All the experts expected an action by clicking on a comment item on the view feed feature. It was unsure if this was caused by the background color on the comment text, but this remark can be used along with the 'aggregated comment' recommendation given above to serve as a possible positive feedback of the implementation of that feature. It shows that the visible metaphor seems to be there already for the users, but with no functionality.
+\item All the experts expected an action by clicking on a comment item on the view feed feature. It was unclear if this was caused by the background color on the comment text, but this remark can be used along with the 'aggregated comment' recommendation given above to serve as a possible positive feedback of the implementation of that feature. It shows that the visible metaphor seems to be there already for the users, but with no functionality.
 \end{itemize}
